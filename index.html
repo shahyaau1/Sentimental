@@ -1,7 +1,67 @@
+<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
   <title>Sentimental squad</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Flex контейнер для участников */
+    .team {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1300px;
+      margin: 0 auto;
+      gap: 20px;
+    }
+
+    .member {
+      text-align: center;
+      flex: 1 1 200px; /* Позволяет блокам сжиматься и растягиваться */
+      max-width: 200px;
+    }
+
+    .member img {
+      border-radius: 10px;
+      margin-bottom: 20px;
+      width: 100%;
+      height: auto;
+    }
+
+    .member a {
+      display: inline-block;
+      padding: 10px 15px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+      background-color: rgba(169,209,188,0.7);
+      border-radius: 8px;
+      box-shadow: 0 3px 5px rgba(0,0,0,0.3);
+      transition: all 0.2s ease;
+    }
+
+    .member a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 8px rgba(0,0,0,0.4);
+    }
+
+    .member a:active {
+      transform: translateY(1px);
+      box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+    }
+
+    /* На маленьких экранах делаем колонку */
+    @media (max-width: 600px) {
+      .team {
+        flex-direction: column;
+        align-items: center;
+      }
+      .member {
+        max-width: 90%; /* чтобы не было узкой колонки */
+      }
+    }
+  </style>
 </head>
 <body style="
     background-image: url('img/first background.jpg');
@@ -30,170 +90,36 @@
          box-shadow: 0 4px 6px rgba(0,0,0,0.3);
          transition: all 0.2s ease;
        "
-       onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 6px 10px rgba(0,0,0,0.4)';"
-       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.3)';"
-       onmousedown="this.style.transform='translateY(1px)'; this.style.boxShadow='0 3px 4px rgba(0,0,0,0.2)';"
-       onmouseup="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 6px 10px rgba(0,0,0,0.4)';"
     >Sentimental</a>
   </div>
 
   <!-- Команда -->
-  <div style="
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      width: 100%;
-      max-width: 1300px;
-      margin: 0 auto;
-      gap: 20px;
-  ">
-
-    <!-- Андрюха -->
-    <div style="text-align:center; flex: 0 0 200px;">
-      <img src="img/1.jpg" width="200" height="200" style="border-radius:10px; margin-bottom:20px;"><br>
-      <a href="Андрюха/index.html"
-         style="
-           display:inline-block;
-           padding: 10px 15px;
-           font-weight:bold;
-           color:black;
-           text-decoration:none;
-           background-color: rgba(169,209,188,0.7);
-           border-radius:8px;
-           box-shadow:0 3px 5px rgba(0,0,0,0.3);
-           transition: all 0.2s ease;
-         "
-         onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 8px rgba(0,0,0,0.4)';"
-         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 3px 5px rgba(0,0,0,0.3)';"
-         onmousedown="this.style.transform='translateY(1px)'; this.style.boxShadow='0 2px 3px rgba(0,0,0,0.2)';"
-         onmouseup="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 8px rgba(0,0,0,0.4)';"
-      ><b>Андрюха</b></a>
+  <div class="team">
+    <div class="member">
+      <img src="img/1.jpg" alt="Андрюха">
+      <a href="Андрюха/index.html"><b>Андрюха</b></a>
     </div>
-
-    <!-- Некит -->
-    <div style="text-align:center; flex: 0 0 200px;">
-      <img src="img/2.jpg" width="200" height="200" style="border-radius:10px; margin-bottom:20px;"><br>
-      <a href="Некит/index.html"
-         style="
-           display:inline-block;
-           padding: 10px 15px;
-           font-weight:bold;
-           color:black;
-           text-decoration:none;
-           background-color: rgba(169,209,188,0.7);
-           border-radius:8px;
-           box-shadow:0 3px 5px rgba(0,0,0,0.3);
-           transition: all 0.2s ease;
-         "
-         onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 8px rgba(0,0,0,0.4)';"
-         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 3px 5px rgba(0,0,0,0.3)';"
-         onmousedown="this.style.transform='translateY(1px)'; this.style.boxShadow='0 2px 3px rgba(0,0,0,0.2)';"
-         onmouseup="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 8px rgba(0,0,0,0.4)';"
-      ><b>Некит</b></a>
+    <div class="member">
+      <img src="img/2.jpg" alt="Некит">
+      <a href="Некит/index.html"><b>Некит</b></a>
     </div>
-
-    <!-- Санек -->
-    <div style="text-align:center; flex: 0 0 200px;">
-      <img src="img/3.jpg" width="200" height="200" style="border-radius:10px; margin-bottom:20px;"><br>
-      <a href="Санек/index.html"
-         style="
-           display:inline-block;
-           padding: 10px 15px;
-           font-weight:bold;
-           color:black;
-           text-decoration:none;
-           background-color: rgba(169,209,188,0.7);
-           border-radius:8px;
-           box-shadow:0 3px 5px rgba(0,0,0,0.3);
-           transition: all 0.2s ease;
-         "
-         onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 8px rgba(0,0,0,0.4)';"
-         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 3px 5px rgba(0,0,0,0.3)';"
-         onmousedown="this.style.transform='translateY(1px)'; this.style.boxShadow='0 2px 3px rgba(0,0,0,0.2)';"
-         onmouseup="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 8px rgba(0,0,0,0.4)';"
-      ><b>Санек</b></a>
+    <div class="member">
+      <img src="img/3.jpg" alt="Санек">
+      <a href="Санек/index.html"><b>Санек</b></a>
     </div>
-
-    <!-- Альберт -->
-    <div style="text-align:center; flex: 0 0 200px;">
-      <img src="img/4.jpg" width="200" height="200" style="border-radius:10px; margin-bottom:20px;"><br>
-      <a href="Альберт/index.html"
-         style="
-           display:inline-block;
-           padding: 10px 15px;
-           font-weight:bold;
-           color:black;
-           text-decoration:none;
-           background-color: rgba(169,209,188,0.7);
-           border-radius:8px;
-           box-shadow:0 3px 5px rgba(0,0,0,0.3);
-           transition: all 0.2s ease;
-         "
-         onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 8px rgba(0,0,0,0.4)';"
-         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 3px 5px rgba(0,0,0,0.3)';"
-         onmousedown="this.style.transform='translateY(1px)'; this.style.boxShadow='0 2px 3px rgba(0,0,0,0.2)';"
-         onmouseup="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 8px rgba(0,0,0,0.4)';"
-      ><b>Альберт</b></a>
+    <div class="member">
+      <img src="img/4.jpg" alt="Альберт">
+      <a href="Альберт/index.html"><b>Альберт</b></a>
     </div>
-
-    <!-- Георгий -->
-    <div style="text-align:center; flex: 0 0 200px;">
-      <img src="img/5.jpg" width="200" height="200" style="border-radius:10px; margin-bottom:20px;"><br>
-      <a href="Георгий/index.html"
-         style="
-           display:inline-block;
-           padding: 10px 15px;
-           font-weight:bold;
-           color:black;
-           text-decoration:none;
-           background-color: rgba(169,209,188,0.7);
-           border-radius:8px;
-           box-shadow:0 3px 5px rgba(0,0,0,0.3);
-           transition: all 0.2s ease;
-         "
-         onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 8px rgba(0,0,0,0.4)';"
-         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 3px 5px rgba(0,0,0,0.3)';"
-         onmousedown="this.style.transform='translateY(1px)'; this.style.boxShadow='0 2px 3px rgba(0,0,0,0.2)';"
-         onmouseup="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 8px rgba(0,0,0,0.4)';"
-      ><b>Георгий</b></a>
+    <div class="member">
+      <img src="img/5.jpg" alt="Георгий">
+      <a href="Георгий/index.html"><b>Георгий</b></a>
     </div>
-
-    <!-- Броник -->
-    <div style="text-align:center; flex: 0 0 200px;">
-      <img src="img/6.jpg" width="200" height="200" style="border-radius:10px; margin-bottom:20px;"><br>
-      <a href="Броник/index.html"
-         style="
-           display:inline-block;
-           padding: 10px 15px;
-           font-weight:bold;
-           color:black;
-           text-decoration:none;
-           background-color: rgba(169,209,188,0.7);
-           border-radius:8px;
-           box-shadow:0 3px 5px rgba(0,0,0,0.3);
-           transition: all 0.2s ease;
-         "
-         onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 8px rgba(0,0,0,0.4)';"
-         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 3px 5px rgba(0,0,0,0.3)';"
-         onmousedown="this.style.transform='translateY(1px)'; this.style.boxShadow='0 2px 3px rgba(0,0,0,0.2)';"
-         onmouseup="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 8px rgba(0,0,0,0.4)';"
-      ><b>Броник</b></a>
+    <div class="member">
+      <img src="img/6.jpg" alt="Броник">
+      <a href="Броник/index.html"><b>Броник</b></a>
     </div>
-
   </div>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
