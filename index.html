@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sentimental squad</title>
 
   <!-- Google tag -->
@@ -14,154 +15,137 @@
   </script>
 
   <style>
+    /* ===== Общие ===== */
+    html,body { height:100%; }
     body {
       background-image: url('img/first background.jpg');
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
-      min-height: 100vh;
       margin: 0;
       padding: 0;
       font-family: cursive;
+      color: #000;
     }
 
-    /* --- Заголовок --- */
     .title {
-      text-align: center;
+      text-align:center;
       margin: 30px 0;
     }
-
     .title a {
-      display: inline-block;
-      padding: 12px 25px;
+      display:inline-block;
+      padding:12px 25px;
       font-family: ALGERIAN;
-      font-weight: bold;
-      font-size: 24px;
-      color: black;
-      text-decoration: none;
-      background-color: rgba(169, 209, 188, 0.7);
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-      transition: all 0.2s ease;
+      font-weight:bold;
+      font-size:24px;
+      color:black;
+      text-decoration:none;
+      background-color: rgba(169,209,188,0.7);
+      border-radius:10px;
+      box-shadow:0 4px 6px rgba(0,0,0,0.3);
+      transition: all .2s ease;
     }
+    .title a:hover { transform: translateY(-3px); box-shadow:0 6px 10px rgba(0,0,0,0.4); }
+    .title a:active { transform: translateY(1px); box-shadow:0 3px 4px rgba(0,0,0,0.2); }
 
-    .title a:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 10px rgba(0,0,0,0.4);
-    }
-    .title a:active {
-      transform: translateY(1px);
-      box-shadow: 0 3px 4px rgba(0,0,0,0.2);
-    }
-
-    /* --- Команда --- */
+    /* ===== Контейнер карточек (ПК поведение: одна строка с прокруткой) ===== */
     .team {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 20px;
-      padding: 0 20px;
+      display:flex;
+      flex-wrap:nowrap;              /* НЕ разрешаем перенос на новую строку */
+      justify-content:flex-start;
+      align-items:flex-start;
+      gap:30px;
+      padding: 0 30px 60px 30px;
+      overflow-x:auto;               /* горизонтальная прокрутка если не помещается */
+      -webkit-overflow-scrolling: touch;
+      box-sizing: border-box;
     }
+
+    /* Иногда где-то на странице есть глобальный img {max-width:100%}; — ОТМЕНЯЕМ это */
+    .member img {
+      display:block;
+      width:200px !important;        /* принудительный фиксированный размер для ПК */
+      height:200px !important;
+      min-width:200px !important;
+      min-height:200px !important;
+      max-width:none !important;
+      max-height:none !important;
+      object-fit:cover;              /* сохраняет пропорции и обрезает, чтобы заполнить квадрат */
+      object-position:center;
+      border-radius:10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+      transition: transform .18s ease;
+    }
+    .member img:hover { transform: translateY(-4px); }
 
     .member {
-      text-align: center;
-      flex: 0 0 200px;
-    }
-
-    .member img {
-      width: 200px;
-      height: 200px;
-      border-radius: 10px;
-      margin-bottom: 20px;
+      text-align:center;
+      flex: 0 0 200px;               /* фиксированная карточка на ПК */
+      box-sizing: border-box;
     }
 
     .member a {
-      display: inline-block;
-      padding: 10px 15px;
-      font-weight: bold;
-      color: black;
-      text-decoration: none;
+      display:inline-block;
+      padding:10px 15px;
+      font-weight:bold;
+      color:black;
+      text-decoration:none;
       background-color: rgba(169,209,188,0.7);
-      border-radius: 8px;
-      box-shadow: 0 3px 5px rgba(0,0,0,0.3);
-      transition: all 0.2s ease;
+      border-radius:8px;
+      box-shadow:0 3px 5px rgba(0,0,0,0.3);
+      transition: all .18s ease;
+      margin-top:6px;
     }
+    .member a:hover { transform: translateY(-2px); box-shadow:0 5px 8px rgba(0,0,0,0.4); }
+    .member a:active { transform: translateY(1px); box-shadow:0 2px 3px rgba(0,0,0,0.2); }
 
-    .member a:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 8px rgba(0,0,0,0.4);
-    }
-    .member a:active {
-      transform: translateY(1px);
-      box-shadow: 0 2px 3px rgba(0,0,0,0.2);
-    }
+    /* удобная мелочь: если где-то глобально задано box-sizing, делаем всё predictable */
+    *,*:before,*:after { box-sizing: border-box; }
 
-    /* --- Адаптив для телефона --- */
+    /* ===== Мобильная версия <=768px ===== */
     @media (max-width: 768px) {
       .team {
-        flex-direction: column;
+        flex-direction: column;       /* колонка — все идут вниз */
         align-items: center;
+        gap:18px;
+        padding: 10px 12px 60px 12px;
+        overflow-x: visible;          /* больше не нужно горизонтального скролла */
       }
+
       .member {
-        flex: 1 1 100%;
+        width:100%;
+        max-width:420px;
+        flex: none;
+        padding: 0 8px;
       }
+
       .member img {
-        width: 80%;
-        height: auto;
+        width:90%;
+        max-width:260px;             /* нормальный размер фото на телефоне */
+        height:auto;
+        min-width:auto;
+        min-height:auto;
       }
-      .title a {
-        font-size: 20px;
-      }
+
+      .title a { font-size:20px; padding:10px 18px; }
     }
+
+    /* Убрать лишние глобальные правила, если есть */
+    img[style] { /* если у тебя в html прописаны inline-width/height — оставим, но наш важнее */ }
   </style>
 </head>
-
 <body>
-  <div class="title">
-    <a href="https://discord.gg/z98wDqJr">Sentimental</a>
-  </div>
+  <div class="title"><a href="https://discord.gg/z98wDqJr">Sentimental</a></div>
 
   <div class="team">
-    <div class="member">
-      <img src="img/1.jpg" alt="">
-      <a href="Андрюха/index.html">Андрюха</a>
-    </div>
-
-    <div class="member">
-      <img src="img/2.jpg" alt="">
-      <a href="Некит/index.html">Некит</a>
-    </div>
-
-    <div class="member">
-      <img src="img/3.jpg" alt="">
-      <a href="Санек/index.html">Санек</a>
-    </div>
-
-    <div class="member">
-      <img src="img/4.jpg" alt="">
-      <a href="Альберт/index.html">Альберт</a>
-    </div>
-
-    <div class="member">
-      <img src="img/5.jpg" alt="">
-      <a href="Георгий/index.html">Георгий</a>
-    </div>
-
-    <div class="member">
-      <img src="img/6.jpg" alt="">
-      <a href="Броник/index.html">Броник</a>
-    </div>
-
-    <div class="member">
-      <img src="img/7.jpg" alt="">
-      <a href="Сказка/index.html">Сказка</a>
-    </div>
-
-    <div class="member">
-      <img src="img/8.jpg" alt="">
-      <a href="Максим/index.html">Максим</a>
-    </div>
+    <div class="member"><img src="img/1.jpg" alt="Андрюха"><a href="Андрюха/index.html">Андрюха</a></div>
+    <div class="member"><img src="img/2.jpg" alt="Некит"><a href="Некит/index.html">Некит</a></div>
+    <div class="member"><img src="img/3.jpg" alt="Санек"><a href="Санек/index.html">Санек</a></div>
+    <div class="member"><img src="img/4.jpg" alt="Альберт"><a href="Альберт/index.html">Альберт</a></div>
+    <div class="member"><img src="img/5.jpg" alt="Георгий"><a href="Георгий/index.html">Георгий</a></div>
+    <div class="member"><img src="img/6.jpg" alt="Броник"><a href="Броник/index.html">Броник</a></div>
+    <div class="member"><img src="img/7.jpg" alt="Сказка"><a href="Сказка/index.html">Сказка</a></div>
+    <div class="member"><img src="img/8.jpg" alt="Максим"><a href="Максим/index.html">Максим</a></div>
   </div>
 </body>
 </html>
