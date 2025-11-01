@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- ОБЯЗАТЕЛЬНО -->
   <title>Андрюха</title>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z4TC29EYDY"></script>
@@ -23,84 +24,82 @@
 
     h1 {
       text-align: center;
-      margin-top: 20px;
+      margin: 20px 0 10px 0;
+      font-size: 28px;
     }
 
     .content {
       width: 90%;
       max-width: 900px;
-      margin: 20px auto;
+      margin: 0 auto 20px auto;
       display: flex;
       align-items: flex-start;
-      justify-content: center;
+      justify-content: flex-start;
       gap: 20px;
-      flex-wrap: nowrap;
+      padding-top: 10px;
     }
 
     .content img {
       width: 300px;
       height: 300px;
+      object-fit: cover;
       border-radius: 10px;
       flex-shrink: 0;
     }
 
-    .content p {
+    .content .text {
       font-size: 20px;
       line-height: 1.5;
-      margin: 0;
+      color: #fff;
     }
 
     .button {
       display: block;
       text-align: center;
-      margin: 40px auto;
+      margin: 30px auto;
       padding: 12px 25px;
       font-family: ALGERIAN;
       font-weight: bold;
-      font-size: 24px;
+      font-size: 20px;
       color: black;
       text-decoration: none;
-      background-color: rgba(169,209,188,0.7);
+      background-color: rgba(169,209,188,0.85);
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0,0,0,0.3);
       transition: all 0.2s ease;
       width: fit-content;
     }
-
-    .button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 10px rgba(0,0,0,0.4);
-    }
-
-    .button:active {
-      transform: translateY(1px);
-      box-shadow: 0 3px 4px rgba(0,0,0,0.2);
-    }
+    .button:hover { transform: translateY(-3px); box-shadow: 0 6px 10px rgba(0,0,0,0.4); }
+    .button:active { transform: translateY(1px); box-shadow: 0 3px 4px rgba(0,0,0,0.2); }
 
     /* --- Мобильная версия --- */
     @media (max-width: 768px) {
+      h1 { font-size: 24px; }
       .content {
-        flex-direction: column;
+        flex-direction: column;      /* СТАВИМ КАРТИНКУ СВЕРХУ */
         align-items: center;
+        gap: 12px;
       }
       .content img {
-        width: 80%;
+        width: 90%;
+        max-width: 300px;
         height: auto;
       }
-      .content p {
+      .content .text {
+        font-size: 18px;             /* читаемый размер на телефоне */
         text-align: center;
-        font-size: 18px;
+        padding: 0 6px;
       }
+      .button { font-size: 18px; padding: 10px 20px; }
     }
   </style>
 </head>
-
 <body>
   <h1>Андрюха</h1>
 
   <div class="content">
     <img src="../img/1.jpg" alt="Андрюха">
-    <p>
+    <div class="text">
       0wner <span style="color:#25F556;">Sentimental</span><br>
       aka 0lyx / 0neLoveInMyHeart / zeeevakha / scarfaceofscuf / NightCortel / Nark0pr1ton / Tuxone4ko / KsyushaTorpeda <br>
       БАН нахуй<br>
@@ -110,7 +109,7 @@
       Убийца егеря и трусов твоей мамы<br>
       Ёбырь твоей соседки по комнате<br>
       Стоп, мне не приятно!
-    </p>
+    </div>
   </div>
 
   <a href="../index.html" class="button">back to Sentimental</a>
