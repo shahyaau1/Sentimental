@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="ru">
+<html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
   <title>Sentimental squad</title>
 
-  <!-- Google tag -->
+  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z4TC29EYDY"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -13,139 +13,228 @@
     gtag('js', new Date());
     gtag('config', 'G-Z4TC29EYDY');
   </script>
-
-  <style>
-    /* ===== Общие ===== */
-    html,body { height:100%; }
-    body {
-      background-image: url('img/first background.jpg');
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      margin: 0;
-      padding: 0;
-      font-family: cursive;
-      color: #000;
-    }
-
-    .title {
-      text-align:center;
-      margin: 30px 0;
-    }
-    .title a {
-      display:inline-block;
-      padding:12px 25px;
-      font-family: ALGERIAN;
-      font-weight:bold;
-      font-size:24px;
-      color:black;
-      text-decoration:none;
-      background-color: rgba(169,209,188,0.7);
-      border-radius:10px;
-      box-shadow:0 4px 6px rgba(0,0,0,0.3);
-      transition: all .2s ease;
-    }
-    .title a:hover { transform: translateY(-3px); box-shadow:0 6px 10px rgba(0,0,0,0.4); }
-    .title a:active { transform: translateY(1px); box-shadow:0 3px 4px rgba(0,0,0,0.2); }
-
-    /* ===== Контейнер карточек (ПК поведение: одна строка с прокруткой) ===== */
-    .team {
-      display:flex;
-      flex-wrap:nowrap;              /* НЕ разрешаем перенос на новую строку */
-      justify-content:flex-start;
-      align-items:flex-start;
-      gap:30px;
-      padding: 0 30px 60px 30px;
-      overflow-x:auto;               /* горизонтальная прокрутка если не помещается */
-      -webkit-overflow-scrolling: touch;
-      box-sizing: border-box;
-    }
-
-    /* Иногда где-то на странице есть глобальный img {max-width:100%}; — ОТМЕНЯЕМ это */
-    .member img {
-      display:block;
-      width:200px !important;        /* принудительный фиксированный размер для ПК */
-      height:200px !important;
-      min-width:200px !important;
-      min-height:200px !important;
-      max-width:none !important;
-      max-height:none !important;
-      object-fit:cover;              /* сохраняет пропорции и обрезает, чтобы заполнить квадрат */
-      object-position:center;
-      border-radius:10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.25);
-      transition: transform .18s ease;
-    }
-    .member img:hover { transform: translateY(-4px); }
-
-    .member {
-      text-align:center;
-      flex: 0 0 200px;               /* фиксированная карточка на ПК */
-      box-sizing: border-box;
-    }
-
-    .member a {
-      display:inline-block;
-      padding:10px 15px;
-      font-weight:bold;
-      color:black;
-      text-decoration:none;
-      background-color: rgba(169,209,188,0.7);
-      border-radius:8px;
-      box-shadow:0 3px 5px rgba(0,0,0,0.3);
-      transition: all .18s ease;
-      margin-top:6px;
-    }
-    .member a:hover { transform: translateY(-2px); box-shadow:0 5px 8px rgba(0,0,0,0.4); }
-    .member a:active { transform: translateY(1px); box-shadow:0 2px 3px rgba(0,0,0,0.2); }
-
-    /* удобная мелочь: если где-то глобально задано box-sizing, делаем всё predictable */
-    *,*:before,*:after { box-sizing: border-box; }
-
-    /* ===== Мобильная версия <=768px ===== */
-    @media (max-width: 768px) {
-      .team {
-        flex-direction: column;       /* колонка — все идут вниз */
-        align-items: center;
-        gap:18px;
-        padding: 10px 12px 60px 12px;
-        overflow-x: visible;          /* больше не нужно горизонтального скролла */
-      }
-
-      .member {
-        width:100%;
-        max-width:420px;
-        flex: none;
-        padding: 0 8px;
-      }
-
-      .member img {
-        width:90%;
-        max-width:260px;             /* нормальный размер фото на телефоне */
-        height:auto;
-        min-width:auto;
-        min-height:auto;
-      }
-
-      .title a { font-size:20px; padding:10px 18px; }
-    }
-
-    /* Убрать лишние глобальные правила, если есть */
-    img[style] { /* если у тебя в html прописаны inline-width/height — оставим, но наш важнее */ }
-  </style>
 </head>
-<body>
-  <div class="title"><a href="https://discord.gg/z98wDqJr">Sentimental</a></div>
+<body style="
+    background-image: url('img/first background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
+">
 
-  <div class="team">
-    <div class="member"><img src="img/1.jpg" alt="Андрюха"><a href="Андрюха/index.html">Андрюха</a></div>
-    <div class="member"><img src="img/2.jpg" alt="Некит"><a href="Некит/index.html">Некит</a></div>
-    <div class="member"><img src="img/3.jpg" alt="Санек"><a href="Санек/index.html">Санек</a></div>
-    <div class="member"><img src="img/4.jpg" alt="Альберт"><a href="Альберт/index.html">Альберт</a></div>
-    <div class="member"><img src="img/5.jpg" alt="Георгий"><a href="Георгий/index.html">Георгий</a></div>
-    <div class="member"><img src="img/6.jpg" alt="Броник"><a href="Броник/index.html">Броник</a></div>
-    <div class="member"><img src="img/7.jpg" alt="Сказка"><a href="Сказка/index.html">Сказка</a></div>
-    <div class="member"><img src="img/8.jpg" alt="Максим"><a href="Максим/index.html">Максим</a></div>
+  <!-- Заголовок Sentimental -->
+  <div style="text-align:center; margin: 30px 0;">
+    <a href="https://discord.gg/z98wDqJr"
+       style="
+         display: inline-block;
+         padding: 12px 25px;
+         font-family: ALGERIAN;
+         font-weight: bold;
+         font-size: 24px;
+         color: black;
+         text-decoration: none;
+         background-color: rgba(169, 209, 188, 0.7);
+         border-radius: 10px;
+         box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+         transition: all 0.2s ease;
+       "
+       onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 6px 10px rgba(0,0,0,0.4)';"
+       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.3)';"
+       onmousedown="this.style.transform='translateY(1px)'; this.style.boxShadow='0 3px 4px rgba(0,0,0,0.2)';"
+       onmouseup="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 6px 10px rgba(0,0,0,0.4)';"
+    >Sentimental</a>
   </div>
+
+  <!-- Команда -->
+ <div style="
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 0 20px;">
+
+
+    <!-- Андрюха -->
+    <div style="text-align:center; flex: 0 0 200px;">
+      <img src="img/1.jpg" width="200" height="200" style="border-radius:10px; margin-bottom:20px;"><br>
+      <a href="Андрюха/index.html"
+         style="
+           display:inline-block;
+           padding: 10px 15px;
+           font-weight:bold;
+           color:black;
+           text-decoration:none;
+           background-color: rgba(169,209,188,0.7);
+           border-radius:8px;
+           box-shadow:0 3px 5px rgba(0,0,0,0.3);
+           transition: all 0.2s ease;
+         "
+         onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 8px rgba(0,0,0,0.4)';"
+         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 3px 5px rgba(0,0,0,0.3)';"
+         onmousedown="this.style.transform='translateY(1px)'; this.style.boxShadow='0 2px 3px rgba(0,0,0,0.2)';"
+         onmouseup="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 8px rgba(0,0,0,0.4)';"
+      ><b>Андрюха</b></a>
+    </div>
+
+    <!-- Некит -->
+    <div style="text-align:center; flex: 0 0 200px;">
+      <img src="img/2.jpg" width="200" height="200" style="border-radius:10px; margin-bottom:20px;"><br>
+      <a href="Некит/index.html"
+         style="
+           display:inline-block;
+           padding: 10px 15px;
+           font-weight:bold;
+           color:black;
+           text-decoration:none;
+           background-color: rgba(169,209,188,0.7);
+           border-radius:8px;
+           box-shadow:0 3px 5px rgba(0,0,0,0.3);
+           transition: all 0.2s ease;
+         "
+         onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 8px rgba(0,0,0,0.4)';"
+         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 3px 5px rgba(0,0,0,0.3)';"
+         onmousedown="this.style.transform='translateY(1px)'; this.style.boxShadow='0 2px 3px rgba(0,0,0,0.2)';"
+         onmouseup="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 8px rgba(0,0,0,0.4)';"
+      ><b>Некит</b></a>
+    </div>
+
+    <!-- Санек -->
+    <div style="text-align:center; flex: 0 0 200px;">
+      <img src="img/3.jpg" width="200" height="200" style="border-radius:10px; margin-bottom:20px;"><br>
+      <a href="Санек/index.html"
+         style="
+           display:inline-block;
+           padding: 10px 15px;
+           font-weight:bold;
+           color:black;
+           text-decoration:none;
+           background-color: rgba(169,209,188,0.7);
+           border-radius:8px;
+           box-shadow:0 3px 5px rgba(0,0,0,0.3);
+           transition: all 0.2s ease;
+         "
+         onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 8px rgba(0,0,0,0.4)';"
+         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 3px 5px rgba(0,0,0,0.3)';"
+         onmousedown="this.style.transform='translateY(1px)'; this.style.boxShadow='0 2px 3px rgba(0,0,0,0.2)';"
+         onmouseup="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 8px rgba(0,0,0,0.4)';"
+      ><b>Санек</b></a>
+    </div>
+
+    <!-- Альберт -->
+    <div style="text-align:center; flex: 0 0 200px;">
+      <img src="img/4.jpg" width="200" height="200" style="border-radius:10px; margin-bottom:20px;"><br>
+      <a href="Альберт/index.html"
+         style="
+           display:inline-block;
+           padding: 10px 15px;
+           font-weight:bold;
+           color:black;
+           text-decoration:none;
+           background-color: rgba(169,209,188,0.7);
+           border-radius:8px;
+           box-shadow:0 3px 5px rgba(0,0,0,0.3);
+           transition: all 0.2s ease;
+         "
+         onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 8px rgba(0,0,0,0.4)';"
+         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 3px 5px rgba(0,0,0,0.3)';"
+         onmousedown="this.style.transform='translateY(1px)'; this.style.boxShadow='0 2px 3px rgba(0,0,0,0.2)';"
+         onmouseup="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 8px rgba(0,0,0,0.4)';"
+      ><b>Альберт</b></a>
+    </div>
+
+    <!-- Георгий -->
+    <div style="text-align:center; flex: 0 0 200px;">
+      <img src="img/5.jpg" width="200" height="200" style="border-radius:10px; margin-bottom:20px;"><br>
+      <a href="Георгий/index.html"
+         style="
+           display:inline-block;
+           padding: 10px 15px;
+           font-weight:bold;
+           color:black;
+           text-decoration:none;
+           background-color: rgba(169,209,188,0.7);
+           border-radius:8px;
+           box-shadow:0 3px 5px rgba(0,0,0,0.3);
+           transition: all 0.2s ease;
+         "
+         onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 8px rgba(0,0,0,0.4)';"
+         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 3px 5px rgba(0,0,0,0.3)';"
+         onmousedown="this.style.transform='translateY(1px)'; this.style.boxShadow='0 2px 3px rgba(0,0,0,0.2)';"
+         onmouseup="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 8px rgba(0,0,0,0.4)';"
+      ><b>Георгий</b></a>
+    </div>
+
+    <!-- Броник -->
+    <div style="text-align:center; flex: 0 0 200px;">
+      <img src="img/6.jpg" width="200" height="200" style="border-radius:10px; margin-bottom:20px;"><br>
+      <a href="Броник/index.html"
+         style="
+           display:inline-block;
+           padding: 10px 15px;
+           font-weight:bold;
+           color:black;
+           text-decoration:none;
+           background-color: rgba(169,209,188,0.7);
+           border-radius:8px;
+           box-shadow:0 3px 5px rgba(0,0,0,0.3);
+           transition: all 0.2s ease;
+         "
+         onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 8px rgba(0,0,0,0.4)';"
+         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 3px 5px rgba(0,0,0,0.3)';"
+         onmousedown="this.style.transform='translateY(1px)'; this.style.boxShadow='0 2px 3px rgba(0,0,0,0.2)';"
+         onmouseup="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 8px rgba(0,0,0,0.4)';"
+      ><b>Броник</b></a>
+    </div>
+
+    <!-- Сказка -->
+    <div style="text-align:center; flex: 0 0 200px;">
+      <img src="img/7.jpg" width="200" height="200" style="border-radius:10px; margin-bottom:20px;"><br>
+      <a href="Сказка/index.html"
+         style="
+           display:inline-block;
+           padding: 10px 15px;
+           font-weight:bold;
+           color:black;
+           text-decoration:none;
+           background-color: rgba(169,209,188,0.7);
+           border-radius:8px;
+           box-shadow:0 3px 5px rgba(0,0,0,0.3);
+           transition: all 0.2s ease;
+         "
+         onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 8px rgba(0,0,0,0.4)';"
+         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 3px 5px rgba(0,0,0,0.3)';"
+         onmousedown="this.style.transform='translateY(1px)'; this.style.boxShadow='0 2px 3px rgba(0,0,0,0.2)';"
+         onmouseup="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 8px rgba(0,0,0,0.4)';"
+      ><b>Сказка</b></a>
+    </div>
+
+    <!-- Максим -->
+    <div style="text-align:center; flex: 0 0 200px;">
+      <img src="img/8.jpg" width="200" height="200" style="border-radius:10px; margin-bottom:20px;"><br>
+      <a href="Максим/index.html"
+         style="
+           display:inline-block;
+           padding: 10px 15px;
+           font-weight:bold;
+           color:black;
+           text-decoration:none;
+           background-color: rgba(169,209,188,0.7);
+           border-radius:8px;
+           box-shadow:0 3px 5px rgba(0,0,0,0.3);
+           transition: all 0.2s ease;
+         "
+         onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 8px rgba(0,0,0,0.4)';"
+         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 3px 5px rgba(0,0,0,0.3)';"
+         onmousedown="this.style.transform='translateY(1px)'; this.style.boxShadow='0 2px 3px rgba(0,0,0,0.2)';"
+         onmouseup="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 8px rgba(0,0,0,0.4)';"
+      ><b>Максим</b></a>
+    </div>
+  </div>
+
 </body>
 </html>
