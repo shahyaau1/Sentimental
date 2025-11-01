@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="ru">
-<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <title>Андрюха</title>
 
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z4TC29EYDY"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -13,56 +11,108 @@
     gtag('js', new Date());
     gtag('config', 'G-Z4TC29EYDY');
   </script>
+
+  <style>
+    body {
+      background-color: black;
+      font-family: cursive;
+      margin: 0;
+      padding: 0;
+      color: white;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .content {
+      width: 90%;
+      max-width: 900px;
+      margin: 20px auto;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: nowrap;
+    }
+
+    .content img {
+      width: 300px;
+      height: 300px;
+      border-radius: 10px;
+      flex-shrink: 0;
+    }
+
+    .content p {
+      font-size: 20px;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .button {
+      display: block;
+      text-align: center;
+      margin: 40px auto;
+      padding: 12px 25px;
+      font-family: ALGERIAN;
+      font-weight: bold;
+      font-size: 24px;
+      color: black;
+      text-decoration: none;
+      background-color: rgba(169,209,188,0.7);
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      transition: all 0.2s ease;
+      width: fit-content;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 10px rgba(0,0,0,0.4);
+    }
+
+    .button:active {
+      transform: translateY(1px);
+      box-shadow: 0 3px 4px rgba(0,0,0,0.2);
+    }
+
+    /* --- Мобильная версия --- */
+    @media (max-width: 768px) {
+      .content {
+        flex-direction: column;
+        align-items: center;
+      }
+      .content img {
+        width: 80%;
+        height: auto;
+      }
+      .content p {
+        text-align: center;
+        font-size: 18px;
+      }
+    }
+  </style>
 </head>
 
-<body style="background-color:black; font-family:cursive; margin:0; padding:0;">
+<body>
+  <h1>Андрюха</h1>
 
-  <p align="center">
-    <font face="cursive" color="white" size="10"><b>Андрюха</b></font>
-  </p>
-
-  <div>
-    <img src="../img/1.jpg" width="300" height="300" style="float: left; margin-right: 20px;">
-    <p style="margin: 0;">
-      <font face="cursive" color="white" size="5">0wner </font>
-      <font face="cursive" color="#25F556" size="5">Sentimental</font><br>
-      <font face="cursive" color="white" size="5">
-        aka 0lyx / 0neLoveInMyHeart / zeeevakha / scarfaceofscuf / NightCortel / Nark0pr1ton / Tuxone4ko / KsyushaTorpeda <br>
-        БАН нахуй<br>
-        4sv<br>
-        Люблю худых ебу любых<br>
-        9 см хуй больше только в кино<br>
-        Убийца егеря и трусов твоей мамы<br>
-        Ёбырь твоей соседки по комнате<br>
-        Стоп, мне не приятно!
-      </font>
+  <div class="content">
+    <img src="../img/1.jpg" alt="Андрюха">
+    <p>
+      0wner <span style="color:#25F556;">Sentimental</span><br>
+      aka 0lyx / 0neLoveInMyHeart / zeeevakha / scarfaceofscuf / NightCortel / Nark0pr1ton / Tuxone4ko / KsyushaTorpeda <br>
+      БАН нахуй<br>
+      4sv<br>
+      Люблю худых ебу любых<br>
+      9 см хуй больше только в кино<br>
+      Убийца егеря и трусов твоей мамы<br>
+      Ёбырь твоей соседки по комнате<br>
+      Стоп, мне не приятно!
     </p>
   </div>
 
-  <div style="text-align:center; margin:30px 0;">
-    <a href="../index.html"
-       style="
-         display:inline-block;
-         padding:12px 25px;
-         font-family:ALGERIAN;
-         font-weight:bold;
-         font-size:24px;
-         color:black;
-         text-decoration:none;
-         background-color: rgba(169,209,188,0.7);
-         border-radius:10px;
-         box-shadow:0 4px 6px rgba(0,0,0,0.3);
-         transition: all 0.2s ease;
-       "
-       onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 6px 10px rgba(0,0,0,0.4)';"
-       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.3)';"
-       onmousedown="this.style.transform='translateY(1px)'; this.style.boxShadow='0 3px 4px rgba(0,0,0,0.2)';"
-       onmouseup="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 6px 10px rgba(0,0,0,0.4)';"
-    ><b>back to Sentimental</b></a>
-  </div>
-
-  <div style="clear:both;"></div>
-
+  <a href="../index.html" class="button">back to Sentimental</a>
 </body>
 </html>
-
