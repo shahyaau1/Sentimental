@@ -15,7 +15,24 @@
   </script>
 </head>
 
-<body style="background-color:black; font-family:cursive; margin:0; padding:0;">
+<body style="margin:0; padding:0; font-family:cursive;">
+<!-- Фоновое видео -->
+  <video autoplay muted loop style="
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    object-fit: cover;
+  ">
+    <source src="../videos/background6.mp4" type="video/mp4">
+    Ваш браузер не поддерживает видео.
+  </video>
+
 
   <p align="center">
     <font face="cursive" color="white" size="10"><b>Броник</b></font>
@@ -60,5 +77,6 @@
 
 </body>
 </html>
+
 
 
