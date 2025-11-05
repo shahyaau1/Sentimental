@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ru">
-<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <title>Альберт</title>
@@ -13,59 +12,125 @@
     gtag('js', new Date());
     gtag('config', 'G-Z4TC29EYDY');
   </script>
+
+  <style>
+    /* Основные стили страницы */
+    body {
+      background-color: black;
+      font-family: cursive;
+      margin: 0;
+      padding: 0;
+      color: white;
+    }
+
+    /* Контейнер с фото и текстом */
+    .content {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 40px;
+    }
+
+    /* Фото Альберта */
+    .photo img {
+      width: 300px;
+      height: 300px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      transition: all 0.4s ease;
+      margin-right: 25px;
+    }
+
+    .photo img:hover {
+      transform: scale(1.05) rotate(-1deg);
+      box-shadow: 0 0 25px rgba(183,255,138,0.6);
+    }
+
+    /* Текст возле фото */
+    .text {
+      font-size: 25px;
+      line-height: 1.5;
+    }
+
+    /* Кнопка "Назад" */
+    .back-btn {
+      display: inline-block;
+      padding: 12px 25px;
+      font-family: ALGERIAN;
+      font-weight: bold;
+      font-size: 24px;
+      color: black;
+      text-decoration: none;
+      background-color: rgba(183, 255, 138, 0.7);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(183,255,138,0.4);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .back-btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(255,255,255,0.25), rgba(183,255,138,0.7));
+      transition: all 0.4s ease;
+    }
+
+    .back-btn:hover::before {
+      left: 100%;
+    }
+
+    .back-btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 25px rgba(183,255,138,0.6);
+    }
+
+    .back-btn:active {
+      transform: translateY(1px);
+      box-shadow: 0 0 10px rgba(183,255,138,0.4);
+    }
+
+    /* Центровка кнопки */
+    .button-container {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+  </style>
 </head>
 
-<body style="background-color:black; font-family:cursive; margin:0; padding:0;">
-
-  <p align="center">
+<body>
+  <!-- Заголовок -->
+  <p align="center" style="margin-top: 20px;">
     <font face="cursive" color="white" size="10"><b>Альберт</b></font>
   </p>
 
-  <div>
-    <img src="../img/4.jpg" width="300" height="300" style="float: left; margin-right: 20px;">
-    <p style="margin: 0;">
-      <font face="cursive" color="white" size="5">
-      <font face="cursive" color="red" size="5"> aka </font>
-      <font face="cursive" color="white" size="5">
-        ynero4ka / yusayner / 0AlBrexT<br>
-        пиздюк<br>
-        миленький девственник<br>
-        мощный дефер<br>
-        вибратор вертухи<br>
-        питается чешуйницами<br>
-        смерть в нищите<br>
-        пользователь MAX<br>
-        после ебли с таксистом
-      </font>
-    </p>
+  <!-- Фото и текст -->
+  <div class="content">
+    <div class="photo">
+      <img src="../img/4.jpg" alt="Альберт">
+    </div>
+
+    <div class="text">
+      <font color="red">aka</font> ynero4ka / yusayner / 0AlBrexT<br>
+      пиздюк<br>
+      миленький девственник<br>
+      мощный дефер<br>
+      вибратор вертухи<br>
+      питается чешуйницами<br>
+      смерть в нищите<br>
+      пользователь MAX<br>
+      после ебли с таксистом
+    </div>
   </div>
 
-  <div style="text-align:center; margin:30px 0;">
-    <a href="../index.html"
-       style="
-         display:inline-block;
-         padding:12px 25px;
-         font-family:ALGERIAN;
-         font-weight:bold;
-         font-size:24px;
-         color:black;
-         text-decoration:none;
-         background-color: rgba(169,209,188,0.7);
-         border-radius:10px;
-         box-shadow:0 4px 6px rgba(0,0,0,0.3);
-         transition: all 0.2s ease;
-       "
-       onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 6px 10px rgba(0,0,0,0.4)';"
-       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.3)';"
-       onmousedown="this.style.transform='translateY(1px)'; this.style.boxShadow='0 3px 4px rgba(0,0,0,0.2)';"
-       onmouseup="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 6px 10px rgba(0,0,0,0.4)';"
-    ><b>back to Sentimental</b></a>
+  <!-- Кнопка возврата -->
+  <div class="button-container">
+    <a href="../index.html" class="back-btn">Back to Sentimental</a>
   </div>
-
-  <div style="clear:both;"></div>
-
 </body>
 </html>
-
-
-
