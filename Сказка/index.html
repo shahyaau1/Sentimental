@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ru">
-<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <title>Сказка</title>
@@ -13,50 +12,116 @@
     gtag('js', new Date());
     gtag('config', 'G-Z4TC29EYDY');
   </script>
+
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: cursive;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 50px;
+    }
+
+    .container {
+      display: flex;
+      align-items: flex-start;
+      padding: 20px;
+    }
+
+    .photo {
+      width: 300px;
+      height: 300px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-right: 20px;
+      transition: all 0.4s ease;
+      box-shadow: 0 0 15px rgba(183,255,138,0.6);
+      flex-shrink: 0;
+    }
+
+    .photo:hover {
+      transform: scale(1.05) rotate(-1deg);
+      box-shadow: 0 0 30px rgba(183,255,138,0.7);
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .text {
+      font-size: 20px;
+      line-height: 1.4;
+    }
+
+    /* Кнопка как у Андрюхи */
+    .back-button {
+      display: inline-block;
+      padding: 12px 25px;
+      font-family: ALGERIAN;
+      font-weight: bold;
+      font-size: 24px;
+      color: black;
+      text-decoration: none;
+      background-color: rgba(183, 255, 138, 0.7);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(183,255,138,0.4);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .back-button::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(255,255,255,0.25), rgba(183,255,138,0.7));
+      transition: all 0.4s ease;
+    }
+
+    .back-button:hover::before {
+      left: 100%;
+    }
+
+    .back-button:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 25px rgba(183,255,138,0.6);
+    }
+
+    .back-button:active {
+      transform: translateY(1px);
+      box-shadow: 0 0 10px rgba(183,255,138,0.4);
+    }
+  </style>
 </head>
 
-<body style="background-color:black; font-family:cursive; margin:0; padding:0;">
+<body>
+  <h1>Сказка</h1>
 
-  <p align="center">
-    <font face="cursive" color="white" size="10"><b>Сказка</b></font>
-  </p>
+  <div class="container">
+    <div class="photo">
+      <img src="../img/7.jpg" alt="Сказка">
+    </div>
 
-  <div>
-    <img src="../img/7.jpg" width="300" height="300" style="float: left; margin-right: 20px;">
-    <p style="margin: 0;">
-      <font face="cursive" color="white" size="5">
-        skazka <br>
-      </font>
-    </p>
+    <div class="text">
+      skazka<br><br>
+      
+    </div>
   </div>
 
-  <div style="text-align:center; margin:30px 0;">
-    <a href="../index.html"
-       style="
-         display:inline-block;
-         padding:12px 25px;
-         font-family:ALGERIAN;
-         font-weight:bold;
-         font-size:24px;
-         color:black;
-         text-decoration:none;
-         background-color: rgba(169,209,188,0.7);
-         border-radius:10px;
-         box-shadow:0 4px 6px rgba(0,0,0,0.3);
-         transition: all 0.2s ease;
-       "
-       onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 6px 10px rgba(0,0,0,0.4)';"
-       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.3)';"
-       onmousedown="this.style.transform='translateY(1px)'; this.style.boxShadow='0 3px 4px rgba(0,0,0,0.2)';"
-       onmouseup="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 6px 10px rgba(0,0,0,0.4)';"
-    ><b>back to Sentimental</b></a>
+  <div style="text-align:center; margin:50px 0;">
+    <a href="../index.html" class="back-button">BACK TO SENTIMENTAL</a>
   </div>
-
-  <div style="clear:both;"></div>
-
 </body>
 </html>
-
-
-
-
