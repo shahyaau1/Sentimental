@@ -4,15 +4,6 @@
   <meta charset="UTF-8">
   <title>Георгий</title>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z4TC29EYDY"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-Z4TC29EYDY');
-  </script>
-
   <style>
     /* Основные стили */
     body {
@@ -24,10 +15,10 @@
       background-color: black;
     }
 
-    /* Фото + текст в одну линию */
+    /* Фото и текст в одну линию */
     .content {
       display: flex;
-      align-items: center;
+      align-items: stretch; /* Растягиваем элементы по высоте */
       justify-content: flex-start;
       padding: 40px;
       position: relative;
@@ -49,10 +40,37 @@
       box-shadow: 0 0 25px rgba(183,255,138,0.6);
     }
 
-    /* Текст */
+    /* Текст рядом с фото */
     .text {
-      font-size: 20px;
+      font-size: 22px;
       line-height: 1.4;
+      margin-left: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Центрируем текст по вертикали */
+      max-height: 300px; /* Высота текста совпадает с фото */
+    }
+
+    /* Стиль текста при наведении */
+    .hover-text {
+      display: inline-block;
+      font-size: 22px;
+      font-weight: bold;
+      color: white;
+      transition: 
+        color 0.4s ease,
+        text-shadow 0.4s ease,
+        transform 0.4s ease,
+        opacity 0.4s ease;
+      cursor: default;
+    }
+
+    .hover-text:hover {
+      color: rgb(183,255,138);
+      text-shadow: 0 0 12px rgba(183,255,138,0.8),
+                   0 0 24px rgba(183,255,138,0.6);
+      transform: translateY(-2px);
+      opacity: 0.9;
     }
 
     /* Кнопки */
@@ -104,6 +122,7 @@
       transform: translateY(1px);
       box-shadow: 0 0 10px rgba(183,255,138,0.4);
     }
+
   </style>
 </head>
 
@@ -128,24 +147,31 @@
 
   <!-- Заголовок -->
   <p align="center" style="margin-top: 20px;">
-    <font face="cursive" color="white" size="10"><b>Георгий</b></font>
+    <span class="hover-text"><font face="cursive" color="white" size="10"><b>Георгий</b></font></span>
   </p>
 
   <!-- Фото и текст -->
   <div class="content">
     <div class="photo">
-      <img src="../img/5.jpg" alt="Георгий">
+      <img src="img/5.jpg" alt="Георгий">
     </div>
 
     <div class="text">
-      <font face="cursive" color="red" size="5">aka</font>
-      <font face="cursive" color="white" size="5">
-        PylaHaBuleT / Uto123<br><br>
-        html&css / python / java / c / c++ <br><br>
-        Linux<br><br>
-        Турничек<br><br>
-        Бля, тоби пезда
-      </font>
+
+      <span class="hover-text">
+        <font color="red">aka</font> PylaHaBuleT / Uto123</span><br><br>
+
+      <span class="hover-text">html&amp;css / python / java / c / c++</span>
+      <br>
+
+      <span class="hover-text">Linux</span>
+      <br>
+
+      <span class="hover-text">Турничек</span>
+      <br>
+
+      <span class="hover-text">Бля, тоби пезда</span>
+
     </div>
   </div>
 
