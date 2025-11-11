@@ -116,13 +116,38 @@
       text-align: center;
       margin: 40px 0;
     }
+	.hover-text {
+  display: inline-block;
+  font-family: ;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  cursor: default;
+
+  transition:
+    color 0.4s ease,
+    text-shadow 0.4s ease,
+    transform 0.4s ease,
+    opacity 0.4s ease;
+}
+
+.hover-text:hover {
+  color: rgb(183,255,138);
+  text-shadow:
+      0 0 8px rgba(183,255,138,0.7),
+      0 0 18px rgba(183,255,138,0.6),
+      0 0 28px rgba(183,255,138,0.4);
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
   </style>
 </head>
 
 <body>
   <!-- Заголовок -->
   <p align="center" style="margin-top: 20px;">
-    <font face="cursive" color="white" size="10"><b>Альберт</b></font>
+    <span class="hover-text"> <font face="cursive" color="white" size="10"><b>Альберт</b></font></span>
   </p>
 
   <!-- Фото и текст -->
@@ -132,16 +157,27 @@
     </div>
 
     <div class="text">
-      <font color="red">aka</font> ynero4ka / yusayner / 0AlBrexT<br>
-      пиздюк<br>
-      миленький девственник<br>
-      мощный дефер<br>
-      вибратор вертухи<br>
-      питается чешуйницами<br>
-      смерть в нищите<br>
-      пользователь MAX<br>
-      после ебли с таксистом
-    </div>
+
+  <span class="hover-text"><font color="red">aka</font> ynero4ka / yusayner / 0AlBrexT</span><br>
+
+  <span class="hover-text">пиздюк</span><br>
+
+  <span class="hover-text">миленький девственник</span><br>
+
+  <span class="hover-text">мощный дефер</span><br>
+
+  <span class="hover-text">вибратор вертухи</span><br>
+
+  <span class="hover-text">питается чешуйницами</span><br>
+
+  <span class="hover-text">смерть в нищите</span><br>
+
+  <span class="hover-text">пользователь MAX</span><br>
+
+  <span class="hover-text">после ебли с таксистом</span>
+
+</div>
+
   </div>
 
   <!-- Кнопка возврата -->
