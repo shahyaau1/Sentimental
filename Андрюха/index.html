@@ -103,6 +103,29 @@
       margin-top: 15px;
       font-size: 50px;
     }
+	.hover-text {
+  display: inline-block;
+  font-family:;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  cursor: default;
+
+  transition: 
+    color 0.4s ease,
+    text-shadow 0.4s ease,
+    transform 0.4s ease,
+    opacity 0.4s ease;
+}
+
+.hover-text:hover {
+  color: rgb(183,255,138);
+  text-shadow: 0 0 12px rgba(183,255,138,0.8),
+               0 0 24px rgba(183,255,138,0.6);
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
   </style>
 </head>
 
@@ -115,16 +138,22 @@
     </div>
 
     <div class="text">
-      0wner <font color="#25F556">Sentimental</font><br><br>
-      <font color="red">aka</font> 0lyx / 0neLoveInMyHeart / zeeevakha / scarfacescuf / NightCortel /  Tuxone4ko / KsyushaTorpeda<br><br>
-      БАН нахуй<br>
-      4sv<br>
-      Люблю худых ебу любых<br>
-      9 см хуй больше только в кино<br>
-      Убийца егеря и трусов твоей мамы<br>
-      Ёбырь твоей соседки по комнате<br>
-      Стоп, мне не приятно!
-    </div>
+
+  <span class="hover-text">0wner <font color="#25F556">Sentimental</font></span><br>
+
+  <span class="hover-text">
+    <font color="red">aka</font> 0lyx / 0neLoveInMyHeart / zeeevakha / scarfacescuf / NightCortel / Tuxone4ko / KsyushaTorpeda</span><br>
+
+  <span class="hover-text">БАН нахуй</span><br>
+  <span class="hover-text">4sv</span><br>
+  <span class="hover-text">Люблю худых ебу любых</span><br>
+  <span class="hover-text">9 см хуй больше только в кино</span><br>
+  <span class="hover-text">Убийца егеря и трусов твоей мамы</span><br>
+  <span class="hover-text">Ёбырь твоей соседки по комнате</span><br>
+  <span class="hover-text">Стоп, мне не приятно!</span>
+
+</div>
+
   </div>
 
   <div style="text-align:center; margin:50px 0;">
@@ -132,5 +161,4 @@
   </div>
 </body>
 </html>
-
 
