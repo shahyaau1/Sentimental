@@ -4,66 +4,84 @@
   <meta charset="UTF-8">
   <title>Кирилл</title>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z4TC29EYDY"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-Z4TC29EYDY');
-  </script>
-
   <style>
+    /* Основные стили */
     body {
-      background-color: black;
-      color: white;
-      font-family: cursive;
       margin: 0;
       padding: 0;
+      font-family: cursive;
+      color: white;
+      overflow-x: hidden;
+      background-color: black;
     }
 
-    h1 {
-      text-align: center;
-      margin-top: 15px;
-      font-size: 50px;
-    }
-
-    .container {
+    /* Фото и текст в одну линию */
+    .content {
       display: flex;
-      align-items: flex-start;
-      padding: 20px;
+      align-items: stretch;
+      justify-content: flex-start;
+      padding: 40px;
+      position: relative;
+      z-index: 1;
     }
 
-    .photo {
+    /* Фото */
+    .photo img {
       width: 300px;
       height: 300px;
       border-radius: 10px;
-      overflow: hidden;
-      margin-right: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
       transition: all 0.4s ease;
-      box-shadow: 0 0 15px rgba(183,255,138,0.6);
-      flex-shrink: 0;
+      margin-right: 20px;
     }
 
-    .photo:hover {
+    .photo img:hover {
       transform: scale(1.05) rotate(-1deg);
-      box-shadow: 0 0 30px rgba(183,255,138,0.7);
+      box-shadow: 0 0 25px rgba(183,255,138,0.6);
     }
 
-    .photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
+    /* Текст рядом с фото */
     .text {
-      font-size: 20px;
+      font-size: 22px;
       line-height: 1.4;
+      margin-left: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-height: 300px;
     }
 
-  
-    .back-button {
+    /* Стиль текста при наведении */
+    .hover-text {
+      display: inline-block;
+      font-size: 22px;
+      font-weight: bold;
+      color: white;
+      transition: 
+        color 0.4s ease,
+        text-shadow 0.4s ease,
+        transform 0.4s ease,
+        opacity 0.4s ease;
+      cursor: default;
+    }
+
+    .hover-text:hover {
+      color: rgb(183,255,138);
+      text-shadow: 0 0 12px rgba(183,255,138,0.8),
+                   0 0 24px rgba(183,255,138,0.6);
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    /* Кнопки */
+    .button-container {
+      text-align: center;
+      margin: 30px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .button {
       display: inline-block;
       padding: 12px 25px;
       font-family: ALGERIAN;
@@ -74,12 +92,13 @@
       background-color: rgba(183, 255, 138, 0.7);
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(183,255,138,0.4);
-      transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
+      transition: all 0.3s ease;
+      margin-top: 15px;
     }
 
-    .back-button::before {
+    .button::before {
       content: "";
       position: absolute;
       top: 0;
@@ -90,45 +109,51 @@
       transition: all 0.4s ease;
     }
 
-    .back-button:hover::before {
+    .button:hover::before {
       left: 100%;
     }
 
-    .back-button:hover {
+    .button:hover {
       transform: translateY(-4px);
       box-shadow: 0 0 25px rgba(183,255,138,0.6);
     }
 
-    .back-button:active {
+    .button:active {
       transform: translateY(1px);
       box-shadow: 0 0 10px rgba(183,255,138,0.4);
     }
+
+
   </style>
 </head>
 
 <body>
-  <h1>Кирилл</h1>
 
-  <div class="container">
+  
+
+  <!-- Заголовок -->
+<p align="center" style="margin-top: 20px;">
+  <span class="hover-text"><font face="cursive" color="white" size="10"><b>Кирилл</b></font></span>
+</p>
+
+  <!-- Фото и текст -->
+  <div class="content">
     <div class="photo">
       <img src="../img/7.jpg" alt="Кирилл">
     </div>
 
     <div class="text">
-	Cказка<br><br>
-      <font color="red">aka</font> k3strx  / SkazO4n1k / narkoprit0n / PussyDestroyer<br><br>
-	тт монстр<br><br>
-	парень 0nb
-      
-      
+      <span class="hover-text">Cказка</span><br><br>
+      <span class="hover-text"><font color="red">aka</font> k3strx / SkazO4n1k / narkoprit0n / PussyDestroyer</span><br><br>
+      <span class="hover-text">тт монстр</span><br><br>
+      <span class="hover-text">парень 0nb</span>
     </div>
   </div>
 
-  <div style="text-align:center; margin:50px 0;">
-    <a href="../index.html" class="back-button">BACK TO SENTIMENTAL</a>
+  <!-- Кнопки -->
+  <div class="button-container">
+    <a href="../index.html" class="button"><b>BACK TO SENTIMENTAL</b></a>
   </div>
+
 </body>
 </html>
-
-
-
