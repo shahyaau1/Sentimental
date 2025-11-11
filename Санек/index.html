@@ -3,16 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Санек</title>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z4TC29EYDY"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-Z4TC29EYDY');
-  </script>
-
+	
   <style>
     body {
       background-color: black;
@@ -25,19 +16,21 @@
     /* Контейнер с фото и текстом */
     .content {
       display: flex;
-      align-items: center;
+      align-items: flex-start; /* фикс выравнивания */
       justify-content: flex-start;
       padding: 40px;
+      gap: 20px; /* расстояние между фото и текстом */
     }
 
-    /* Фото — тот же стиль, что у Андрюхи */
+    /* Фото */
     .photo img {
       width: 300px;
       height: 300px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.4);
       transition: all 0.4s ease;
-      margin-right: 20px;
+      flex-shrink: 0; /* фикс, чтобы картинку не сжимало */
+      object-fit: cover;
     }
 
     .photo img:hover {
@@ -45,7 +38,38 @@
       box-shadow: 0 0 25px rgba(183,255,138,0.6);
     }
 
-    /* Кнопка — с анимацией и подсветкой */
+    /* Текст рядом с фото */
+    .text {
+      font-size: 20px;
+      line-height: 1.4;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Неон ховер на текст */
+    .hover-text {
+      display: inline-block;
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+      cursor: default;
+      transition:
+        color 0.4s ease,
+        text-shadow 0.4s ease,
+        transform 0.4s ease,
+        opacity 0.4s ease;
+    }
+
+    .hover-text:hover {
+      color: rgb(183,255,138);
+      text-shadow:
+        0 0 12px rgba(183,255,138,0.8),
+        0 0 24px rgba(183,255,138,0.6);
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    /* Кнопка */
     .back-btn {
       display: inline-block;
       padding: 12px 25px;
@@ -87,69 +111,46 @@
       box-shadow: 0 0 10px rgba(183,255,138,0.4);
     }
 
-    /* Центровка кнопки */
     .button-container {
       text-align: center;
       margin: 40px 0;
     }
-
-	.hover-text {
-  display: inline-block;
-  font-family: ;
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
-  cursor: default;
-
-  transition: 
-    color 0.4s ease,
-    text-shadow 0.4s ease,
-    transform 0.4s ease,
-    opacity 0.4s ease;
-}
-
-.hover-text:hover {
-  color: rgb(183,255,138);
-  text-shadow: 0 0 12px rgba(183,255,138,0.8),
-               0 0 24px rgba(183,255,138,0.6);
-  transform: translateY(-2px);
-  opacity: 0.9;
-}
 
   </style>
 </head>
 
 <body>
   <p align="center" style="margin-top: 20px;">
-   <span class="hover-text"> <font face="cursive" color="white" size="10"><b>Санек</b></font></span>
+    <span class="hover-text"><font face="cursive" color="white" size="10"><b>Санек</b></font></span>
   </p>
 
   <div class="content">
+
     <div class="photo">
       <img src="../img/3.jpg" alt="Санек">
     </div>
 
-  <div class="text">
+    <div class="text">
 
-  <span class="hover-text">Канделака</span><br>
+      <span class="hover-text">Канделака</span><br><br>
 
-  <span class="hover-text"><font color="red">aka</font> AchtungRaid</span><br><br>
+      <span class="hover-text"><font color="red">aka</font> AchtungRaid</span><br><br>
 
-  <span class="hover-text">Сисечки больше чем у твоей одноклассницы</span><br>
+      <span class="hover-text">Сисечки больше чем у твоей одноклассницы</span><br>
 
-  <span class="hover-text">Вас зарейдил</span><br>
+      <span class="hover-text">Вас зарейдил</span><br>
 
-  <span class="hover-text">Редстоун машина</span><br>
+      <span class="hover-text">Редстоун машина</span><br>
 
-  <span class="hover-text">120 кг опездол</span>
+      <span class="hover-text">120 кг опездол</span>
 
-</div>
+    </div>
 
   </div>
 
   <div class="button-container">
     <a href="../index.html" class="back-btn">Back to Sentimental</a>
   </div>
+
 </body>
 </html>
-
