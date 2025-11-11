@@ -93,12 +93,35 @@
       margin: 40px 0;
     }
 
+	.hover-text {
+  display: inline-block;
+  font-family: ;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  cursor: default;
+
+  transition: 
+    color 0.4s ease,
+    text-shadow 0.4s ease,
+    transform 0.4s ease,
+    opacity 0.4s ease;
+}
+
+.hover-text:hover {
+  color: rgb(183,255,138);
+  text-shadow: 0 0 12px rgba(183,255,138,0.8),
+               0 0 24px rgba(183,255,138,0.6);
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
   </style>
 </head>
 
 <body>
   <p align="center" style="margin-top: 20px;">
-    <font face="cursive" color="white" size="10"><b>Санек</b></font>
+   <span class="hover-text"> <font face="cursive" color="white" size="10"><b>Санек</b></font></span>
   </p>
 
   <div class="content">
@@ -106,14 +129,22 @@
       <img src="../img/3.jpg" alt="Санек">
     </div>
 
-    <p style="margin: 0; font-size: 20px;">
-      Канделака<br><br>
-      <font color="red">aka</font> AchtungRaid<br><br>
-      Сисечки больше чем у твоей одноклассницы<br><br>
-      Вас зарейдил<br><br>
-      Редстоун машина<br><br>
-      120 кг опездол
-    </p>
+   <p style=": 0; font-size: 30px;">
+
+  <span class="hover-text">Канделака</span><br>
+
+  <span class="hover-text"><font color="red">aka</font> AchtungRaid</span><br><br>
+
+  <span class="hover-text">Сисечки больше чем у твоей одноклассницы</span><br>
+
+  <span class="hover-text">Вас зарейдил</span><br>
+
+  <span class="hover-text">Редстоун машина</span><br>
+
+  <span class="hover-text">120 кг опездол</span>
+
+</p>
+
   </div>
 
   <div class="button-container">
