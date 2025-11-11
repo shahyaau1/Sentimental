@@ -4,16 +4,8 @@
   <meta charset="UTF-8">
   <title>Броник</title>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z4TC29EYDY"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-Z4TC29EYDY');
-  </script>
-
   <style>
+    /* Основные стили */
     body {
       margin: 0;
       padding: 0;
@@ -23,17 +15,17 @@
       background-color: black;
     }
 
-    /* Фото + текст */
+    /* Фото и текст в одну линию */
     .content {
       display: flex;
-      align-items: center;
+      align-items: stretch; /* Растягиваем элементы по высоте */
       justify-content: flex-start;
       padding: 40px;
       position: relative;
       z-index: 1;
     }
 
-    /* Фото Броника */
+    /* Фото Георгия */
     .photo img {
       width: 300px;
       height: 300px;
@@ -48,10 +40,37 @@
       box-shadow: 0 0 25px rgba(183,255,138,0.6);
     }
 
-    /* Текст */
+    /* Текст рядом с фото */
     .text {
-      font-size: 20px;
+      font-size: 22px;
       line-height: 1.4;
+      margin-left: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Центрируем текст по вертикали */
+      max-height: 300px; /* Высота текста совпадает с фото */
+    }
+
+    /* Стиль текста при наведении */
+    .hover-text {
+      display: inline-block;
+      font-size: 22px;
+      font-weight: bold;
+      color: white;
+      transition: 
+        color 0.4s ease,
+        text-shadow 0.4s ease,
+        transform 0.4s ease,
+        opacity 0.4s ease;
+      cursor: default;
+    }
+
+    .hover-text:hover {
+      color: rgb(183,255,138);
+      text-shadow: 0 0 12px rgba(183,255,138,0.8),
+                   0 0 24px rgba(183,255,138,0.6);
+      transform: translateY(-2px);
+      opacity: 0.9;
     }
 
     /* Кнопки */
@@ -103,6 +122,7 @@
       transform: translateY(1px);
       box-shadow: 0 0 10px rgba(183,255,138,0.4);
     }
+
   </style>
 </head>
 
@@ -127,7 +147,7 @@
 
   <!-- Заголовок -->
   <p align="center" style="margin-top: 20px;">
-    <font face="cursive" color="white" size="10"><b>Броник</b></font>
+    <span class="hover-text"><font face="cursive" color="white" size="10"><b>Броник</b></font></span>
   </p>
 
   <!-- Фото и текст -->
@@ -137,14 +157,13 @@
     </div>
 
     <div class="text">
-      <font face="cursive" color="white" size="5">
-        Люблю худых ебу любых <br><br>
-        Качок <br><br>
-        Бизнес мен <br><br>
-        Топ 2 по куни <br><br>
-        0wner brusik shop
-      </font>
-    </div>
+  <span class="hover-text">Люблю худых ебу любых</span><br>
+  <span class="hover-text">Качок</span><br>
+  <span class="hover-text">Бизнес мен</span><br>
+  <span class="hover-text">Топ 2 по куни</span><br>
+  <span class="hover-text">0wner brusik shop</span>
+</div>
+
   </div>
 
   <!-- Кнопки -->
