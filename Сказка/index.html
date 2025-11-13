@@ -2,10 +2,9 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Кирилл</title>
+  <title>Некит</title>
 
   <style>
-    /* Основные стили */
     body {
       margin: 0;
       padding: 0;
@@ -15,24 +14,30 @@
       background-color: black;
     }
 
-    /* Фото и текст в одну линию */
-    .content {
+    /* Контейнер с фото и текстом */
+    .container {
       display: flex;
-      align-items: stretch;
-      justify-content: flex-start;
+      align-items: flex-start;
       padding: 40px;
-      position: relative;
-      z-index: 1;
     }
 
-    /* Фото */
-    .photo img {
+    .photo {
       width: 300px;
       height: 300px;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.4);
-      transition: all 0.4s ease;
+      overflow: hidden;
       margin-right: 20px;
+      transition: all 0.4s ease;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      flex-shrink: 0;
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: all 0.4s ease;
     }
 
     .photo img:hover {
@@ -40,18 +45,12 @@
       box-shadow: 0 0 25px rgba(183,255,138,0.6);
     }
 
-    /* Текст рядом с фото */
     .text {
       font-size: 22px;
-      line-height: 1.4;
-      margin-left: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      max-height: 300px;
+      line-height: 1.6;
+      max-width: 600px;
     }
 
-    /* Стиль текста при наведении */
     .hover-text {
       display: inline-block;
       font-size: 22px;
@@ -73,15 +72,8 @@
       opacity: 0.9;
     }
 
-    /* Кнопки */
-    .button-container {
-      text-align: center;
-      margin: 30px 0;
-      position: relative;
-      z-index: 1;
-    }
-
-    .button {
+    /* Кнопка */
+    .back-button {
       display: inline-block;
       padding: 12px 25px;
       font-family: ALGERIAN;
@@ -95,10 +87,9 @@
       position: relative;
       overflow: hidden;
       transition: all 0.3s ease;
-      margin-top: 15px;
     }
 
-    .button::before {
+    .back-button::before {
       content: "";
       position: absolute;
       top: 0;
@@ -109,51 +100,61 @@
       transition: all 0.4s ease;
     }
 
-    .button:hover::before {
+    .back-button:hover::before {
       left: 100%;
     }
 
-    .button:hover {
+    .back-button:hover {
       transform: translateY(-4px);
       box-shadow: 0 0 25px rgba(183,255,138,0.6);
     }
 
-    .button:active {
+    .back-button:active {
       transform: translateY(1px);
       box-shadow: 0 0 10px rgba(183,255,138,0.4);
     }
 
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 50px;
+    }
 
+    /* Центровка кнопки */
+    .button-container {
+      text-align: center;
+      margin: 50px 0;
+    }
   </style>
 </head>
 
 <body>
 
-  
+  	<!-- Заголовок -->
+  	<p align="center" style="margin-top: 20px;">
+    	<span class="hover-text"><font face="cursive" color="white" size="10"><b>Некит</b></font></span>
+  	</p>
 
-  <!-- Заголовок -->
-<p align="center" style="margin-top: 20px;">
-  <span class="hover-text"><font face="cursive" color="white" size="10"><b>Кирилл</b></font></span>
-</p>
-
-  <!-- Фото и текст -->
-  <div class="content">
-    <div class="photo">
-      <img src="../img/7.jpg" alt="Кирилл">
-    </div>
+  	<div class="container">
+    	<div class="photo">
+      	<img src="../img/2.jpg" alt="Некит">
+    	</div>
 
     <div class="text">
-      <span class="hover-text">Cказка</span><br><br>
-      <span class="hover-text"><font color="red">aka</font> k3strx / SkazO4n1k / narkoprit0n / PussyDestroyer</span><br><br>
-      <span class="hover-text">тт монстр</span><br><br>
-      <span class="hover-text">парень 0nb</span>
+      	<span class="hover-text">0wner <span style="color:#25F556;">Sentimental</span></span><br>
+      	<span class="hover-text"><span style="color:red;">aka</span> Rashik358 / hardcode / AventadorSVJ</span><br>
+	<span class="hover-text">бобр курва, я пердоле, ке быдло</span><br>
+	<span class="hover-text">проеб тк на киты</span><br>
+	<span class="hover-text">благотворительный фонд амурских тигров</span><br>
+	<span class="hover-text">работяга</span><br>
+	<span class="hover-text">он пришел, жди брата</span><br>
+	<span class="hover-text">брат Олуха</span><br>
     </div>
-  </div>
+  	</div>
 
-  <!-- Кнопки -->
-  <div class="button-container">
-    <a href="../index.html" class="button"><b>BACK TO SENTIMENTAL</b></a>
-  </div>
+  	<div class="button-container">
+    	<a href="../index.html" class="back-button">BACK TO SENTIMENTAL</a>
+  	</div>
 
 </body>
 </html>
