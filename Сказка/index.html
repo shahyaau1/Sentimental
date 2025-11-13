@@ -2,23 +2,24 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Некит</title>
+  <title>Кирилл</title>
 
   <style>
     body {
+      background-color: black;
+      color: white;
+      font-family: cursive;
       margin: 0;
       padding: 0;
-      font-family: cursive;
-      color: white;
-      overflow-x: hidden;
-      background-color: black;
     }
 
-    /* Контейнер с фото и текстом */
     .container {
       display: flex;
       align-items: flex-start;
-      padding: 40px;
+      justify-content: flex-start; /* фото слева */
+      padding: 40px 20px;
+      gap: 40px;
+      flex-wrap: nowrap; /* чтобы не переносилось */
     }
 
     .photo {
@@ -26,10 +27,14 @@
       height: 300px;
       border-radius: 10px;
       overflow: hidden;
-      margin-right: 20px;
       transition: all 0.4s ease;
-      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      box-shadow: 0 0 15px rgba(183,255,138,0.6);
       flex-shrink: 0;
+    }
+
+    .photo:hover {
+      transform: scale(1.05) rotate(-1deg);
+      box-shadow: 0 0 30px rgba(183,255,138,0.7);
     }
 
     .photo img {
@@ -37,31 +42,28 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: all 0.4s ease;
-    }
-
-    .photo img:hover {
-      transform: scale(1.05) rotate(-1deg);
-      box-shadow: 0 0 25px rgba(183,255,138,0.6);
     }
 
     .text {
-      font-size: 22px;
-      line-height: 1.6;
-      max-width: 600px;
+      font-size: 20px;
+      line-height: 1.4;
+      white-space: nowrap; /* строки не переносятся */
+      width: 100%; /* текст занимает всю доступную ширину */
+      overflow: hidden;
+      text-overflow: ellipsis; /* если что-то слишком длинное — троеточие */
     }
 
     .hover-text {
       display: inline-block;
-      font-size: 22px;
+      font-size: 24px;
       font-weight: bold;
       color: white;
+      cursor: default;
       transition: 
         color 0.4s ease,
         text-shadow 0.4s ease,
         transform 0.4s ease,
         opacity 0.4s ease;
-      cursor: default;
     }
 
     .hover-text:hover {
@@ -114,47 +116,44 @@
       box-shadow: 0 0 10px rgba(183,255,138,0.4);
     }
 
-    h1 {
-      text-align: center;
-      margin-top: 20px;
-      font-size: 50px;
-    }
-
-    /* Центровка кнопки */
+    /* Контейнер кнопки по центру под всем контентом */
     .button-container {
       text-align: center;
-      margin: 50px 0;
+      margin: 40px 0 60px 0;
     }
   </style>
 </head>
 
 <body>
 
-  	<!-- Заголовок -->
-  	<p align="center" style="margin-top: 20px;">
-    	<span class="hover-text"><font face="cursive" color="white" size="10"><b>Некит</b></font></span>
-  	</p>
+  <!-- Заголовок -->
+  <p align="center" style="margin-top: 20px;">
+    <span class="hover-text">
+      <font face="cursive" color="white" size="10"><b>Кирилл</b></font>
+    </span>
+  </p>
 
-  	<div class="container">
-    	<div class="photo">
-      	<img src="../img/2.jpg" alt="Некит">
-    	</div>
-
-    <div class="text">
-      	<span class="hover-text">0wner <span style="color:#25F556;">Sentimental</span></span><br>
-      	<span class="hover-text"><span style="color:red;">aka</span> Rashik358 / hardcode / AventadorSVJ</span><br>
-	<span class="hover-text">бобр курва, я пердоле, ке быдло</span><br>
-	<span class="hover-text">проеб тк на киты</span><br>
-	<span class="hover-text">благотворительный фонд амурских тигров</span><br>
-	<span class="hover-text">работяга</span><br>
-	<span class="hover-text">он пришел, жди брата</span><br>
-	<span class="hover-text">брат Олуха</span><br>
+  <!-- Контент -->
+  <div class="container">
+    <div class="photo">
+      <img src="../img/7.jpg" alt="Кирилл">
     </div>
-  	</div>
 
-  	<div class="button-container">
-    	<a href="../index.html" class="back-button">BACK TO SENTIMENTAL</a>
-  	</div>
+    	<div class="text">
+      	<span class="hover-text">Сказка</span>　<br>
+	<span class="hover-text">0wner <font color="#25F556">Квастапов</font></span><br>
+      	<span class="hover-text"><span style="color:red;">aka</span> k3strx / SkazO4n1k / narkopr1ton / PussyDestroyer</span>　<br><br>
+      	<span class="hover-text">Кирюша Пися</span>　<br><br>
+     	<span class="hover-text">ТТ Монстр</span>　<br><br>
+      	<span class="hover-text">Парень 0nb</span>
+	
+    	</div>
+  </div>
+
+  <!-- Кнопка по центру под фото и текстом -->
+  <div class="button-container">
+    <a href="../index.html" class="back-button">BACK TO SENTIMENTAL</a>
+  </div>
 
 </body>
 </html>
