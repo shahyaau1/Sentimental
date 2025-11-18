@@ -2,56 +2,40 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sentimental squad</title>
 
   <style>
-    /* Базовые стили (Mobile First) */
-    :root {
-      --primary-color: rgba(183, 255, 138, 0.7);
-      --shadow-color: rgba(183, 255, 138, 0.4);
-      --text-color: black;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
     body {
-      background-image: url('img/mobile-bg.jpg');
+      background-image: url('img/first background.jpg');
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
-      background-attachment: fixed;
       min-height: 100vh;
       margin: 0;
       padding: 0;
-      font-family: 'Arial', sans-serif;
+      font-family: cursive;
     }
 
     /* Заголовок */
     .title {
       text-align: center;
-      margin: 15px 0;
-      padding: 0 10px;
+      margin: 30px 0;
     }
 
     .title a {
       display: inline-block;
-      padding: 8px 16px;
-      font-family: 'Arial', sans-serif;
+      padding: 12px 25px;
+      font-family: ALGERIAN;
       font-weight: bold;
-      font-size: 18px;
-      color: var(--text-color);
+      font-size: 24px;
+      color: black;
       text-decoration: none;
-      background-color: var(--primary-color);
-      border-radius: 8px;
+      background-color: rgba(183, 255, 138, 0.7); /* прозрачность 70% */
+      border-radius: 10px;
       position: relative;
       overflow: hidden;
       transition: all 0.3s ease;
-      box-shadow: 0 3px 8px var(--shadow-color);
-      max-width: 90%;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(183,255,138,0.4);
     }
 
     .title a::before {
@@ -61,7 +45,7 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, rgba(255,255,255,0.25), var(--primary-color));
+      background: linear-gradient(90deg, rgba(255,255,255,0.25), rgba(183,255,138,0.7));
       transition: all 0.4s ease;
     }
 
@@ -70,60 +54,53 @@
     }
 
     .title a:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0 15px var(--shadow-color);
+      transform: translateY(-4px);
+      box-shadow: 0 0 25px rgba(183,255,138,0.6);
     }
 
     /* Блок с участниками */
     .team {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      padding: 0 10px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: flex-start;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 0 20px 50px;
     }
 
     .member {
       text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      flex: 0 0 200px;
     }
 
     .member img {
-      width: 100%;
-      max-width: 120px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 8px;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 6px rgba(0,0,0,0.3);
+      width: 200px;
+      height: 200px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      transition: all 0.4s ease;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
     }
 
     .member img:hover {
       transform: scale(1.05) rotate(-1deg);
-      box-shadow: 0 0 15px var(--shadow-color);
+      box-shadow: 0 0 25px rgba(183,255,138,0.6);
     }
 
     /* Кнопки участников */
     .member a {
       display: inline-block;
-      padding: 6px 10px;
+      padding: 10px 15px;
       font-weight: bold;
-      font-size: 12px;
-      color: var(--text-color);
+      color: black;
       text-decoration: none;
-      background-color: var(--primary-color);
-      border-radius: 6px;
+      background-color: rgba(183, 255, 138, 0.7); /* прозрачность 70% */
+      border-radius: 8px;
       position: relative;
       overflow: hidden;
       transition: all 0.3s ease;
-      box-shadow: 0 2px 5px var(--shadow-color);
-      width: 100%;
-      max-width: 120px;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 8px rgba(183,255,138,0.4);
     }
 
     .member a::before {
@@ -133,7 +110,7 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, rgba(255,255,255,0.25), var(--primary-color));
+      background: linear-gradient(90deg, rgba(255,255,255,0.25), rgba(183,255,138,0.7));
       transition: all 0.4s ease;
     }
 
@@ -142,226 +119,13 @@
     }
 
     .member a:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0 12px var(--shadow-color);
+      transform: translateY(-3px);
+      box-shadow: 0 0 20px rgba(183,255,138,0.6);
     }
 
     .member a:active {
       transform: translateY(1px);
-      box-shadow: 0 0 6px var(--shadow-color);
-    }
-
-    /* ГОРИЗОНТАЛЬНАЯ ОРИЕНТАЦИЯ НА МОБИЛЬНЫХ (667px - 900px высота) */
-    @media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
-      body {
-        background-image: url('img/mobile-landscape-bg.jpg');
-        min-height: 100vh;
-        padding: 5px 0;
-      }
-
-      .title {
-        margin: 8px 0;
-        padding: 0 8px;
-      }
-      
-      .title a {
-        padding: 6px 12px;
-        font-size: 16px;
-        max-width: 200px;
-      }
-
-      .team {
-        grid-template-columns: repeat(4, 1fr); /* 4 колонки в альбомной ориентации */
-        gap: 8px;
-        padding: 0 8px 10px;
-        max-height: calc(100vh - 60px);
-        overflow-y: auto;
-      }
-
-      .member {
-        flex: 0 0 auto;
-      }
-
-      .member img {
-        max-width: 80px;
-        height: 80px;
-        margin-bottom: 5px;
-      }
-
-      .member a {
-        max-width: 80px;
-        font-size: 10px;
-        padding: 4px 6px;
-        border-radius: 4px;
-      }
-    }
-
-    /* Улучшенная горизонтальная ориентация для больших экранов */
-    @media (max-width: 900px) and (max-height: 400px) and (orientation: landscape) {
-      .team {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 6px;
-      }
-
-      .member img {
-        max-width: 70px;
-        height: 70px;
-      }
-
-      .member a {
-        max-width: 70px;
-        font-size: 9px;
-        padding: 3px 5px;
-      }
-    }
-
-    /* Планшеты (768px и выше) */
-    @media (min-width: 768px) {
-      body {
-        background-image: url('img/tablet-bg.jpg');
-        font-family: 'Georgia', serif;
-      }
-
-      .title {
-        margin: 25px 0;
-        padding: 0 15px;
-      }
-      
-      .title a {
-        padding: 10px 20px;
-        font-family: 'Georgia', serif;
-        font-size: 22px;
-        border-radius: 10px;
-      }
-
-      .team {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 15px;
-        padding: 0 15px 30px;
-      }
-
-      .member img {
-        max-width: 140px;
-        height: 140px;
-        margin-bottom: 10px;
-      }
-
-      .member a {
-        padding: 8px 12px;
-        font-size: 14px;
-        max-width: 140px;
-        border-radius: 7px;
-      }
-    }
-
-    /* Горизонтальная ориентация на планшетах */
-    @media (min-width: 768px) and (max-height: 600px) and (orientation: landscape) {
-      .team {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 12px;
-        padding: 0 15px 20px;
-      }
-
-      .member img {
-        max-width: 120px;
-        height: 120px;
-      }
-
-      .member a {
-        max-width: 120px;
-        font-size: 13px;
-      }
-    }
-
-    /* Ноутбуки 1366px */
-    @media (min-width: 1366px) {
-      body {
-        background-image: url('img/first background.jpg');
-        font-family: 'cursive', 'Comic Sans MS', sans-serif;
-      }
-
-      .title {
-        margin: 30px 0;
-      }
-      
-      .title a {
-        padding: 12px 25px;
-        font-family: 'ALGERIAN', sans-serif;
-        font-size: 24px;
-        border-radius: 10px;
-      }
-
-      .team {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
-        padding: 0 20px 40px;
-      }
-
-      .member img {
-        max-width: 160px;
-        height: 160px;
-        margin-bottom: 12px;
-      }
-
-      .member a {
-        padding: 9px 14px;
-        font-size: 15px;
-        max-width: 160px;
-        border-radius: 8px;
-      }
-    }
-
-    /* Десктоп 1920px */
-    @media (min-width: 1920px) {
-      body {
-        background-image: url('img/first background.jpg');
-        font-family: 'cursive', 'ALGERIAN', sans-serif;
-      }
-
-      .team {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 25px;
-        padding: 0 30px 50px;
-        max-width: 1400px;
-      }
-
-      .member img {
-        max-width: 180px;
-        height: 180px;
-        margin-bottom: 15px;
-      }
-
-      .member a {
-        padding: 10px 15px;
-        font-size: 16px;
-        max-width: 180px;
-      }
-    }
-
-    /* Для очень маленьких экранов */
-    @media (max-width: 360px) {
-      .team {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-      }
-
-      .member img {
-        max-width: 100px;
-        height: 100px;
-      }
-
-      .member a {
-        max-width: 100px;
-        font-size: 11px;
-        padding: 5px 8px;
-      }
-    }
-
-    /* Для ретина-дисплеев */
-    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-      .title a, .member a {
-        text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-      }
+      box-shadow: 0 0 10px rgba(183,255,138,0.4);
     }
   </style>
 </head>
@@ -416,3 +180,4 @@
   </div>
 </body>
 </html>
+
