@@ -2,77 +2,29 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Андрюха</title>
 
   <style>
-    /* Базовые стили (Mobile First) */
-    :root {
-      --primary-color: rgba(183, 255, 138, 0.7);
-      --shadow-color: rgba(183, 255, 138, 0.4);
-      --text-color: white;
-      --accent-color: #25F556;
-      --danger-color: red;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       background-color: black;
-      color: var(--text-color);
-      font-family: 'Arial', sans-serif;
+      color: white;
+      font-family: cursive;
       margin: 0;
       padding: 0;
-      min-height: 100vh;
     }
 
-    /* Заголовок */
-    .page-title {
-      text-align: center;
-      margin: 15px 0;
-      padding: 0 10px;
-    }
-
-    .hover-text {
-      display: inline-block;
-      font-family: 'Arial', sans-serif;
-      font-size: 28px;
-      font-weight: bold;
-      color: var(--text-color);
-      cursor: default;
-      transition: 
-        color 0.4s ease,
-        text-shadow 0.4s ease,
-        transform 0.4s ease,
-        opacity 0.4s ease;
-    }
-
-    .hover-text:hover {
-      color: rgb(183,255,138);
-      text-shadow: 0 0 12px rgba(183,255,138,0.8),
-                   0 0 24px rgba(183,255,138,0.6);
-      transform: translateY(-2px);
-      opacity: 0.9;
-    }
-
-    /* Основной контейнер */
     .container {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 15px;
-      gap: 20px;
+      align-items: flex-start;
+      padding: 20px;
     }
 
-    /* Фото */
     .photo {
-      width: 100%;
-      max-width: 250px;
-      height: 250px;
+      width: 300px;
+      height: 300px;
       border-radius: 10px;
       overflow: hidden;
+      margin-right: 20px;
       transition: all 0.4s ease;
       box-shadow: 0 0 15px rgba(183,255,138,0.6);
       flex-shrink: 0;
@@ -90,35 +42,26 @@
       display: block;
     }
 
-    /* Текст */
     .text {
-      font-size: 16px;
+      font-size: 20px;
       line-height: 1.4;
-      text-align: center;
-      width: 100%;
     }
 
-    .text-line {
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    /* Кнопка назад */
+    /* Кнопка как на главной */
     .back-button {
       display: inline-block;
-      padding: 10px 20px;
-      font-family: 'Arial', sans-serif;
+      padding: 12px 25px;
+      font-family: ALGERIAN;
       font-weight: bold;
-      font-size: 18px;
+      font-size: 24px;
       color: black;
       text-decoration: none;
-      background-color: var(--primary-color);
-      border-radius: 8px;
-      box-shadow: 0 4px 8px var(--shadow-color);
+      background-color: rgba(183, 255, 138, 0.7);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(183,255,138,0.4);
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
-      margin: 20px 0;
     }
 
     .back-button::before {
@@ -128,7 +71,7 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, rgba(255,255,255,0.25), var(--primary-color));
+      background: linear-gradient(90deg, rgba(255,255,255,0.25), rgba(183,255,138,0.7));
       transition: all 0.4s ease;
     }
 
@@ -137,200 +80,83 @@
     }
 
     .back-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 0 20px var(--shadow-color);
+      transform: translateY(-4px);
+      box-shadow: 0 0 25px rgba(183,255,138,0.6);
     }
 
     .back-button:active {
       transform: translateY(1px);
-      box-shadow: 0 0 10px var(--shadow-color);
+      box-shadow: 0 0 10px rgba(183,255,138,0.4);
     }
 
-    /* Планшеты (768px и выше) */
-    @media (min-width: 768px) {
-      .container {
-        flex-direction: row;
-        align-items: flex-start;
-        padding: 20px;
-        gap: 25px;
-      }
-
-      .photo {
-        max-width: 300px;
-        height: 300px;
-      }
-
-      .text {
-        font-size: 18px;
-        text-align: left;
-        line-height: 1.5;
-      }
-
-      .text-line {
-        margin-bottom: 10px;
-      }
-
-      .page-title {
-        margin: 20px 0;
-      }
-
-      .hover-text {
-        font-size: 36px;
-      }
-
-      .back-button {
-        padding: 12px 25px;
-        font-size: 20px;
-      }
+    h1 {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 50px;
     }
+	.hover-text {
+  display: inline-block;
+  font-family:;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  cursor: default;
 
-    /* Ноутбуки 1366px */
-    @media (min-width: 1366px) {
-      .container {
-        padding: 30px;
-        gap: 30px;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
+  transition: 
+    color 0.4s ease,
+    text-shadow 0.4s ease,
+    transform 0.4s ease,
+    opacity 0.4s ease;
+}
 
-      .photo {
-        max-width: 350px;
-        height: 350px;
-      }
+.hover-text:hover {
+  color: rgb(183,255,138);
+  text-shadow: 0 0 12px rgba(183,255,138,0.8),
+               0 0 24px rgba(183,255,138,0.6);
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
 
-      .text {
-        font-size: 20px;
-        line-height: 1.6;
-      }
-
-      .text-line {
-        margin-bottom: 12px;
-      }
-
-      .page-title {
-        margin: 30px 0;
-      }
-
-      .hover-text {
-        font-size: 17px;
-        font-family: 'cursive', 'Comic Sans MS', sans-serif;
-      }
-
-      .back-button {
-        font-family: 'ALGERIAN', sans-serif;
-        font-size: 24px;
-      }
-    }
-
-    /* Десктоп 1920px */
-    @media (min-width: 1920px) {
-      .container {
-        max-width: 1400px;
-      }
-
-      .photo {
-        max-width: 400px;
-        height: 400px;
-      }
-
-      .text {
-        font-size: 22px;
-      }
-
-      .hover-text {
-        font-size: 50px;
-      }
-    }
-
-    /* Горизонтальная ориентация на мобильных */
-    @media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
-      .container {
-        flex-direction: row;
-        padding: 10px;
-        gap: 15px;
-        align-items: flex-start;
-      }
-
-      .photo {
-        max-width: 200px;
-        height: 200px;
-      }
-
-      .text {
-        font-size: 14px;
-        text-align: left;
-      }
-
-      .text-line {
-        margin-bottom: 6px;
-      }
-
-      .page-title {
-        margin: 10px 0;
-      }
-
-      .hover-text {
-        font-size: 24px;
-      }
-
-      .back-button {
-        padding: 8px 16px;
-        font-size: 16px;
-        margin: 15px 0;
-      }
-    }
-
-    /* Для очень маленьких экранов */
-    @media (max-width: 360px) {
-      .photo {
-        max-width: 200px;
-        height: 200px;
-      }
-
-      .text {
-        font-size: 14px;
-      }
-
-      .hover-text {
-        font-size: 24px;
-      }
-
-      .back-button {
-        font-size: 16px;
-        padding: 8px 16px;
-      }
-    }
   </style>
 </head>
 
 <body>
   <!-- Заголовок -->
-  <div class="page-title">
-    <span class="hover-text"><font size="30px">Андрюха</font></span>
-  </div>
+  <p align="center" style="margin-top: 20px;">
+    <span class="hover-text"><font face="cursive" color="white" size="10"><b>Андрюха</b></font></span>
+  </p>
 
-  <!-- Основной контент -->
   <div class="container">
     <div class="photo">
       <img src="../img/1.jpg" alt="Андрюха">
     </div>
 
     <div class="text">
-      <span class="hover-text text-line">0wner <font color="green">Sentimental</font></span>
-      <span class="hover-text text-line"><font color="red">aka</font> 0lyx / 0neLoveInMyHeart / NightCortel / KsyushaTorpeda</span>
-      <span class="hover-text text-line">БАН нахуй</span>
-      <span class="hover-text text-line">4sv</span>
-      <span class="hover-text text-line">Люблю худых ебу любых</span>
-      <span class="hover-text text-line">9 см хуй больше только в кино</span>
-      <span class="hover-text text-line">Убийца егеря и трусов твоей мамы</span>
-      <span class="hover-text text-line">Ёбырь твоей соседки по комнате</span>
-      <span class="hover-text text-line">Стоп, мне не приятно!</span>
-    </div>
+
+  <span class="hover-text">0wner <font color="#25F556">Sentimental</font></span><br>
+
+  <span class="hover-text">
+    <font color="red">aka</font> 0lyx / 0neLoveInMyHeart / NightCortel / KsyushaTorpeda</span><br>
+
+  <span class="hover-text">БАН нахуй</span><br>
+  <span class="hover-text">4sv</span><br>
+  <span class="hover-text">Люблю худых ебу любых</span><br>
+  <span class="hover-text">9 см хуй больше только в кино</span><br>
+  <span class="hover-text">Убийца егеря и трусов твоей мамы</span><br>
+  <span class="hover-text">Ёбырь твоей соседки по комнате</span><br>
+  <span class="hover-text">Стоп, мне не приятно!</span>
+
+</div>
+
   </div>
 
-  <!-- Кнопка назад -->
-  <div style="text-align:center;">
+  <div style="text-align:center; margin:50px 0;">
     <a href="../index.html" class="back-button">BACK TO SENTIMENTAL</a>
   </div>
 </body>
 </html>
+
+
+
+
+
