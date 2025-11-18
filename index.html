@@ -18,7 +18,7 @@
     }
 
     body {
-      background-image: url('img/mobile-bg.jpg'); /* Фон для мобильных */
+      background-image: url('img/mobile-bg.jpg');
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
@@ -26,7 +26,7 @@
       min-height: 100vh;
       margin: 0;
       padding: 0;
-      font-family: 'Arial', sans-serif; /* Безопасный шрифт для мобильных */
+      font-family: 'Arial', sans-serif;
     }
 
     /* Заголовок */
@@ -39,7 +39,7 @@
     .title a {
       display: inline-block;
       padding: 8px 16px;
-      font-family: 'Arial', sans-serif; /* Для мобильных используем безопасный шрифт */
+      font-family: 'Arial', sans-serif;
       font-weight: bold;
       font-size: 18px;
       color: var(--text-color);
@@ -77,7 +77,7 @@
     /* Блок с участниками */
     .team {
       display: grid;
-      grid-template-columns: repeat(2, 1fr); /* 2 колонки на мобильных */
+      grid-template-columns: repeat(2, 1fr);
       gap: 12px;
       padding: 0 10px 20px;
       max-width: 1200px;
@@ -151,11 +151,75 @@
       box-shadow: 0 0 6px var(--shadow-color);
     }
 
+    /* ГОРИЗОНТАЛЬНАЯ ОРИЕНТАЦИЯ НА МОБИЛЬНЫХ (667px - 900px высота) */
+    @media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
+      body {
+        background-image: url('img/mobile-landscape-bg.jpg');
+        min-height: 100vh;
+        padding: 5px 0;
+      }
+
+      .title {
+        margin: 8px 0;
+        padding: 0 8px;
+      }
+      
+      .title a {
+        padding: 6px 12px;
+        font-size: 16px;
+        max-width: 200px;
+      }
+
+      .team {
+        grid-template-columns: repeat(4, 1fr); /* 4 колонки в альбомной ориентации */
+        gap: 8px;
+        padding: 0 8px 10px;
+        max-height: calc(100vh - 60px);
+        overflow-y: auto;
+      }
+
+      .member {
+        flex: 0 0 auto;
+      }
+
+      .member img {
+        max-width: 80px;
+        height: 80px;
+        margin-bottom: 5px;
+      }
+
+      .member a {
+        max-width: 80px;
+        font-size: 10px;
+        padding: 4px 6px;
+        border-radius: 4px;
+      }
+    }
+
+    /* Улучшенная горизонтальная ориентация для больших экранов */
+    @media (max-width: 900px) and (max-height: 400px) and (orientation: landscape) {
+      .team {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 6px;
+      }
+
+      .member img {
+        max-width: 70px;
+        height: 70px;
+      }
+
+      .member a {
+        max-width: 70px;
+        font-size: 9px;
+        padding: 3px 5px;
+      }
+    }
+
     /* Планшеты (768px и выше) */
     @media (min-width: 768px) {
       body {
-        background-image: url('img/tablet-bg.jpg'); /* Фон для планшетов */
-        font-family: 'Georgia', serif; /* Более красивый шрифт для планшетов */
+        background-image: url('img/tablet-bg.jpg');
+        font-family: 'Georgia', serif;
       }
 
       .title {
@@ -171,7 +235,7 @@
       }
 
       .team {
-        grid-template-columns: repeat(3, 1fr); /* 3 колонки на планшетах */
+        grid-template-columns: repeat(3, 1fr);
         gap: 15px;
         padding: 0 15px 30px;
       }
@@ -190,11 +254,30 @@
       }
     }
 
+    /* Горизонтальная ориентация на планшетах */
+    @media (min-width: 768px) and (max-height: 600px) and (orientation: landscape) {
+      .team {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+        padding: 0 15px 20px;
+      }
+
+      .member img {
+        max-width: 120px;
+        height: 120px;
+      }
+
+      .member a {
+        max-width: 120px;
+        font-size: 13px;
+      }
+    }
+
     /* Ноутбуки 1366px */
     @media (min-width: 1366px) {
       body {
-        background-image: url('img/first background.jpg'); /* Ваш оригинальный фон 1920x1080 */
-        font-family: 'cursive', 'Comic Sans MS', sans-serif; /* Декоративный шрифт для ПК */
+        background-image: url('img/first background.jpg');
+        font-family: 'cursive', 'Comic Sans MS', sans-serif;
       }
 
       .title {
@@ -203,7 +286,7 @@
       
       .title a {
         padding: 12px 25px;
-        font-family: 'ALGERIAN', sans-serif; /* Оригинальный шрифт для ПК */
+        font-family: 'ALGERIAN', sans-serif;
         font-size: 24px;
         border-radius: 10px;
       }
@@ -271,34 +354,6 @@
         max-width: 100px;
         font-size: 11px;
         padding: 5px 8px;
-      }
-    }
-
-    /* Горизонтальная ориентация на мобильных */
-    @media (max-height: 500px) and (orientation: landscape) {
-      body {
-        background-image: url('img/mobile-landscape-bg.jpg'); /* Специальный фон для горизонтальной ориентации */
-      }
-
-      .title {
-        margin: 10px 0;
-      }
-      
-      .team {
-        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-        gap: 8px;
-        padding-bottom: 15px;
-      }
-
-      .member img {
-        max-width: 90px;
-        height: 90px;
-      }
-
-      .member a {
-        max-width: 90px;
-        font-size: 10px;
-        padding: 4px 6px;
       }
     }
 
