@@ -6,7 +6,7 @@
 
   <style>
     body {
-      background-image: url("../img/background8.jpg");
+      background-image: url("background8.jpg");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -22,13 +22,13 @@
     h1 {
       text-align: center;
       margin-top: 20px;
-      font-size: 80px; /* крупный заголовок как у остальных */
+      font-size: 80px;
       font-family: cursive;
     }
 
     .content {
       display: flex;
-      align-items: stretch; /* растягиваем фото и текст по высоте */
+      align-items: stretch;
       padding: 40px;
       position: relative;
       z-index: 1;
@@ -39,14 +39,28 @@
       height: 300px;
       border-radius: 10px;
       overflow: hidden;
-      margin-right: 20px;
       transition: all 0.4s ease;
       box-shadow: 0 0 15px rgba(183,255,138,0.6);
       flex-shrink: 0;
     }
 
-    .photo:hover {
+    .photo-left {
+      margin-right: 20px;
+    }
+
+    .photo-left:hover {
       transform: scale(1.05) rotate(-1deg);
+      box-shadow: 0 0 30px rgba(183,255,138,0.7);
+    }
+
+    .photo-right {
+      position: absolute;
+      right: 40px;
+      top: 40px;
+    }
+
+    .photo-right:hover {
+      transform: scale(1.05) rotate(1deg);
       box-shadow: 0 0 30px rgba(183,255,138,0.7);
     }
 
@@ -62,9 +76,9 @@
       line-height: 1.4;
       display: flex;
       flex-direction: column;
-      justify-content: center; /* центрируем текст по вертикали относительно фото */
-      max-height: 300px; /* высота совпадает с фото */
-      max-width: 600px; /* ограничиваем ширину текста */
+      justify-content: center;
+      max-height: 300px;
+      max-width: 600px;
     }
 
     .hover-text {
@@ -148,10 +162,12 @@
 </p>
 
   <div class="content">
-    <div class="photo">
+    <!-- Левая фотография -->
+    <div class="photo photo-left">
       <img src="../img/8.jpg" alt="Максим">
     </div>
 
+    <!-- Текст сразу справа от первого фото -->
     <div class="text">
       <span class="hover-text">Максимка</span><br>	
       <span class="hover-text"><font color="red">aka</font> 0nb / fleks_ / nefleks</span><br>
@@ -160,6 +176,11 @@
       <span class="hover-text">Н̶е̶ гей</span>
       <span class="hover-text">король минетов</span>
       <span class="hover-text">рыгает в микрофон</span>
+    </div>
+
+    <!-- Правая фотография закреплена справа -->
+    <div class="photo photo-right">
+      <img src="../img/8.1.png" alt="Максим">
     </div>
   </div>
 
