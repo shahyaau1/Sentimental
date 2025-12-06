@@ -71,35 +71,49 @@
       display: block;
     }
 
-    .text {
-      font-size: 22px;
-      line-height: 1.4;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      max-height: 300px;
-      max-width: 600px;
-    }
+        /* Стиль текста при наведении */
+.hover-text {
+  display: inline-block;
+  font-family: ;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  cursor: default;
+  
+  /* Добавляем черную обводку */
+  text-shadow: 
+      1px 1px 0 #000,
+      -1px 1px 0 #000,
+      1px -1px 0 #000,
+      -1px -1px 0 #000,
+      0px 1px 0 #000,
+      0px -1px 0 #000,
+      1px 0px 0 #000,
+      -1px 0px 0 #000;
+  
+  transition:
+    color 0.4s ease,
+    text-shadow 0.4s ease,
+    transform 0.4s ease,
+    opacity 0.4s ease;
+}
 
-    .hover-text {
-      display: inline-block;
-      font-size: 22px;
-      font-weight: bold;
-      color: white;
-      transition: 
-        color 0.4s ease,
-        text-shadow 0.4s ease,
-        transform 0.4s ease,
-        opacity 0.4s ease;
-      cursor: default;
-    }
-
-    .hover-text:hover {
-      color: rgb(183,255,138);
-      text-shadow: 0 0 12px rgba(183,255,138,0.8),
-                   0 0 24px rgba(183,255,138,0.6);
-      transform: translateY(-2px);
-      opacity: 0.9;
+.hover-text:hover {
+  color: rgb(183,255,138);
+  text-shadow:
+      1px 1px 0 #000,
+      -1px 1px 0 #000,
+      1px -1px 0 #000,
+      -1px -1px 0 #000,
+      0px 1px 0 #000,
+      0px -1px 0 #000,
+      1px 0px 0 #000,
+      -1px 0px 0 #000,
+      0 0 8px rgba(183,255,138,0.7),
+      0 0 18px rgba(183,255,138,0.6),
+      0 0 28px rgba(183,255,138,0.4);
+  transform: translateY(-2px);
+  opacity: 0.9;
     }
 
     .button-container {
@@ -169,12 +183,12 @@
 
     <!-- Текст сразу справа от первого фото -->
     <div class="text">
-      <span class="hover-text">Максимка</span><br>	
-      <span class="hover-text"><font color="red">aka</font> 0nb / fleks_ / nefleks</span><br>
-      <span class="hover-text">ебырь хонея</span>
-      <span class="hover-text">зетник</span>
-      <span class="hover-text">Н̶е̶ гей</span>
-      <span class="hover-text">король минетов</span>
+      <span class="hover-text">Максимка</span><br><br>	
+      <span class="hover-text"><font color="red">aka</font> 0nb / fleks_ / nefleks</span><br><br>
+      <span class="hover-text">ебырь хонея</span><br>
+      <span class="hover-text">зетник</span><br>
+      <span class="hover-text">Н̶е̶ гей</span><br>
+      <span class="hover-text">король минетов</span><br>
       <span class="hover-text">рыгает в микрофон</span>
     </div>
 
@@ -190,4 +204,3 @@
 
 </body>
 </html>
-
