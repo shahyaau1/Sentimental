@@ -127,6 +127,47 @@
       transform: translateY(1px);
       box-shadow: 0 0 10px rgba(183,255,138,0.4);
     }
+    .text {
+      font-size: 20px;
+      line-height: 0.5;
+      margin: 0;
+      padding: 0;
+    }
+    .hover-text {
+      display: inline-block;
+      font-size: 40px;
+      font-weight: bold;
+      color: grey;
+      cursor: default;
+  
+  /* Черная обводка */
+    text-shadow: 
+      1px 1px 0 #000,
+      -1px 1px 0 #000,
+      1px -1px 0 #000,
+      -1px -1px 0 #000,
+      0px 1px 0 #000,
+      0px -1px 0 #000,
+      1px 0px 0 #000,
+      -1px 0px 0 #000;
+  
+    transition:
+      color 0.4s ease,
+      text-shadow 0.4s ease,
+      transform 0.4s ease,
+      opacity 0.4s ease;
+    }
+    .hover-text:hover {
+      color: rgb(183,255,138);
+      text-shadow:
+        0 0 12px rgba(183,255,138,0.8),
+        0 0 24px rgba(183,255,138,0.6);
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+
+
   </style>
 </head>
 
@@ -148,10 +189,6 @@
       <a href="Некит/index.html">Некит</a>
     </div>
 
-    <div class="member">
-      <img src="img/3.jpg" alt="Санек">
-      <a href="Санек/index.html">Санек</a>
-    </div>
 
     <div class="member">
       <img src="img/4.jpg" alt="Альберт">
@@ -178,6 +215,16 @@
       <a href="Максим/index.html">Максим</a>
     </div>
   </div>
+  <br>
+  <div>
+    
+      <div class="text">
+        <p align="center"><span class="hover-text">Позорники клана</span></p><br><br>
+      </div>
+    <div class="member">
+      <img src="img/3.jpg" alt="Санек"><br>
+      <a href="Санек/Санек.html">Санек</a>
+    </div>
+  </div>
 </body>
 </html>
-
