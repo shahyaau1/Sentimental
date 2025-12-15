@@ -1,5 +1,5 @@
 body {
-  background-image: url('../img/first background.jpg');
+  background-image: url('img/first background.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -158,4 +158,5 @@ body {
     0 0 24px rgba(183,255,138,0.6);
   transform: translateY(-2px);
   opacity: 0.9;
+
 }
