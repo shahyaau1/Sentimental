@@ -1,54 +1,161 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <title>Sentimental squad</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+body {
+  background-image: url('img/first background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: cursive;
+}
 
-<body>
-  <!-- Заголовок -->
-  <div class="title">
-    <a href="https://discord.gg/TtRRuZA5">Sentimental</a>
-  </div>
+/* Заголовок */
+.title {
+  text-align: center;
+  margin: 30px 0;
+}
 
-  <!-- Команда -->
-  <div class="team">
-    <div class="member">
-      <img src="img/1.jpg" alt="Андрюха">
-      <a href="Андрюха/Андрюха.html">Андрюха</a>
-    </div>
+.title a {
+  display: inline-block;
+  padding: 12px 25px;
+  font-family: ALGERIAN, sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  color: black;
+  text-decoration: none;
+  background-color: rgba(183, 255, 138, 0.7);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(183,255,138,0.4);
+}
 
-    <div class="member">
-      <img src="img/2.jpg" alt="Некит">
-      <a href="Некит/Некит.html">Некит</a>
-    </div>
+.title a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255,255,255,0.25), rgba(183,255,138,0.7));
+  transition: all 0.4s ease;
+}
 
-    <div class="member">
-      <img src="img/4.jpg" alt="Альберт">
-      <a href="Альберт/Альберт.html">Альберт</a>
-    </div>
+.title a:hover::before {
+  left: 100%;
+}
 
-    <div class="member">
-      <img src="img/5.jpg" alt="Георгий">
-      <a href="Георгий/Георгий.html">Георгий</a>
-    </div>
+.title a:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 25px rgba(183,255,138,0.6);
+}
 
-    <div class="member">
-      <img src="img/6.jpg" alt="Броник">
-      <a href="Броник/Броник.html">Броник</a>
-    </div>
+/* Блок с участниками */
+.team {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 0 20px 50px;
+}
 
-    <div class="member">
-      <img src="img/7.jpg" alt="Сказка">
-      <a href="Сказка/Сказка.html">Кирилл</a>
-    </div>
+.member {
+  text-align: center;
+  flex: 0 0 200px;
+}
 
-    <div class="member">
-      <img src="img/8.jpg" alt="Максим">
-      <a href="Максим/Максим.html">Максим</a>
-    </div>
-  </div>
-</body>
-</html>
+.member img {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
 
+.member img:hover {
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 0 0 25px rgba(183,255,138,0.6);
+}
+
+/* Кнопки участников */
+.member a {
+  display: inline-block;
+  padding: 10px 15px;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  background-color: rgba(183, 255, 138, 0.7);
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(183,255,138,0.4);
+}
+
+.member a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255,255,255,0.25), rgba(183,255,138,0.7));
+  transition: all 0.4s ease;
+}
+
+.member a:hover::before {
+  left: 100%;
+}
+
+.member a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(183,255,138,0.6);
+}
+
+.member a:active {
+  transform: translateY(1px);
+  box-shadow: 0 0 10px rgba(183,255,138,0.4);
+}
+
+.text {
+  font-size: 20px;
+  line-height: 0.5;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.hover-text {
+  display: inline-block;
+  font-size: 40px;
+  font-weight: bold;
+  color: grey;
+  cursor: default;
+  text-shadow: 
+    1px 1px 0 #000,
+    -1px 1px 0 #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000,
+    0px 1px 0 #000,
+    0px -1px 0 #000,
+    1px 0px 0 #000,
+    -1px 0px 0 #000;
+  transition:
+    color 0.4s ease,
+    text-shadow 0.4s ease,
+    transform 0.4s ease,
+    opacity 0.4s ease;
+}
+
+.hover-text:hover {
+  color: rgb(183,255,138);
+  text-shadow:
+    0 0 12px rgba(183,255,138,0.8),
+    0 0 24px rgba(183,255,138,0.6);
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
