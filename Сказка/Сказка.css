@@ -59,7 +59,7 @@ body {
   /* Текст */
   .text {
     font-size: 25px;
-    line-height: 0.9;
+    line-height: 0.8;
     white-space: nowrap;
     width: 100%;
     overflow: visible; /* Изменил с hidden на visible чтобы весь текст был виден */
@@ -157,7 +157,4 @@ body {
     text-align: center;
     margin: 40px 0 60px 0;
     padding-bottom: 40px;
-
   }
-
-
