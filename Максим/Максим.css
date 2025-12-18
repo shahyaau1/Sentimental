@@ -183,3 +183,55 @@ body {
     transform: translateY(1px);
     box-shadow: 0 0 10px rgba(183,255,138,0.4);
   }
+
+  .video-left{
+    position: absolute;
+    left: 40px;
+    bottom: 40px;
+    width: 500px;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 15px rgba(183,255,138,0.6);
+    z-index: 2;
+  }
+
+  .video-left:hover {
+    transform: scale(1.05) rotate(1deg);
+    box-shadow: 0 0 30px rgba(183,255,138,0.7);
+  }
+
+  .video-left video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    background-color: black;
+  }
+
+  .video-right{
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+    width: 500px;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 15px rgba(183,255,138,0.6);
+    z-index: 2;
+  }
+
+  .video-right:hover {
+    transform: scale(1.05) rotate(1deg);
+    box-shadow: 0 0 30px rgba(183,255,138,0.7);
+  }
+
+  .video-right video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    background-color: black;
+  }
