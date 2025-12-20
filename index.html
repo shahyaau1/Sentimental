@@ -66,7 +66,7 @@
       align-items: flex-start;
       overflow-x: auto;
       gap: 20px;
-      padding: 0 20px 50px;
+      padding: 0 20px 30px;
     }
 
     .member {
@@ -127,46 +127,121 @@
       transform: translateY(1px);
       box-shadow: 0 0 10px rgba(183,255,138,0.4);
     }
+    
     .text {
       font-size: 20px;
       line-height: 0.5;
       margin: 0;
       padding: 0;
     }
-    .hover-text {
-      display: inline-block;
-      font-size: 40px;
-      font-weight: bold;
-      color: grey;
-      cursor: default;
-  
-  /* Черная обводка */
-    text-shadow: 
-      1px 1px 0 #000,
-      -1px 1px 0 #000,
-      1px -1px 0 #000,
-      -1px -1px 0 #000,
-      0px 1px 0 #000,
-      0px -1px 0 #000,
-      1px 0px 0 #000,
-      -1px 0px 0 #000;
-  
-    transition:
-      color 0.4s ease,
-      text-shadow 0.4s ease,
-      transform 0.4s ease,
-      opacity 0.4s ease;
+    
+    /* Стиль для hover-текста Clan Friends */
+    .clan-friends-section {
+      text-align: center;
+      margin: 20px 0 40px;
+      padding: 20px 0;
     }
-    .hover-text:hover {
+    
+    .clan-friends-title {
+      font-size: 55px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      cursor: default;
+      color: grey;
+      
+      /* Черная обводка */
+      text-shadow: 
+        1px 1px 0 #000,
+        -1px 1px 0 #000,
+        1px -1px 0 #000,
+        -1px -1px 0 #000,
+        0px 1px 0 #000,
+        0px -1px 0 #000,
+        1px 0px 0 #000,
+        -1px 0px 0 #000;
+      
+      transition:
+        color 0.4s ease,
+        text-shadow 0.4s ease,
+        transform 0.4s ease,
+        opacity 0.4s ease;
+    }
+    
+    .clan-friends-title:hover {
       color: rgb(183,255,138);
       text-shadow:
-        0 0 12px rgba(183,255,138,0.8),
-        0 0 24px rgba(183,255,138,0.6);
+        1px 1px 0 #000,
+        -1px 1px 0 #000,
+        1px -1px 0 #000,
+        -1px -1px 0 #000,
+        0px 1px 0 #000,
+        0px -1px 0 #000,
+        1px 0px 0 #000,
+        -1px 0px 0 #000,
+        0 0 8px rgba(183,255,138,0.7),
+        0 0 18px rgba(183,255,138,0.6),
+        0 0 28px rgba(183,255,138,0.4);
       transform: translateY(-2px);
       opacity: 0.9;
     }
-
-
+    
+    /* Стиль для члена клана друзей */
+    .clan-friend {
+      text-align: center;
+    }
+    
+    .clan-friend img {
+      width: 200px;
+      height: 200px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      transition: all 0.4s ease;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+    
+    .clan-friend img:hover {
+      transform: scale(1.05) rotate(-1deg);
+      box-shadow: 0 0 25px rgba(183,255,138,0.6);
+    }
+    
+    .clan-friend a {
+      display: inline-block;
+      padding: 10px 15px;
+      font-weight: bold;
+      color: black;
+      text-decoration: none;
+      background-color: rgba(183, 255, 138, 0.7);
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(183,255,138,0.4);
+    }
+    
+    .clan-friend a::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(255,255,255,0.25), rgba(183,255,138,0.7));
+      transition: all 0.4s ease;
+    }
+    
+    .clan-friend a:hover::before {
+      left: 100%;
+    }
+    
+    .clan-friend a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 20px rgba(183,255,138,0.6);
+    }
+    
+    .clan-friend a:active {
+      transform: translateY(1px);
+      box-shadow: 0 0 10px rgba(183,255,138,0.4);
+    }
 
   </style>
 </head>
@@ -188,7 +263,6 @@
       <img src="img/2.jpg" alt="Некит">
       <a href="Некит/Некит.html">Некит</a>
     </div>
-
 
     <div class="member">
       <img src="img/4.jpg" alt="Альберт">
@@ -213,6 +287,16 @@
     <div class="member">
       <img src="img/8.jpg" alt="Максим">
       <a href="Максим/Максим.html">Максим</a>
+    </div>
+  </div>
+  
+  <!-- Clan Friends секция -->
+  <div class="clan-friends-section">
+    <div class="clan-friends-title">Clan Friends</div>
+    
+    <div class="clan-friend">
+      <img src="img/9.jpg" alt="Mountain"><br>
+      <a href="Mountain/Mountain.html">Mountain</a>
     </div>
   </div>
 </body>
