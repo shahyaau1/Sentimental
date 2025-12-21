@@ -17,7 +17,7 @@ body {
 .title a {
   display: inline-block;
   padding: 12px 25px;
-  font-family: ALGERIAN, fantasy, sans-serif;
+  font-family: ALGERIAN;
   font-weight: bold;
   font-size: 24px;
   color: black;
@@ -233,10 +233,11 @@ body {
   body {
     background: #000000;
     background-size: cover;
+    font-family: Arial, sans-serif;
   }
   
   .title a {
-    font-family: "Apple Chancery", "Bradley Hand", "Brush Script MT", cursive;
+    font-family: Arial, sans-serif;
     font-size: 16px;
     padding: 8px 16px;
   }
@@ -258,6 +259,7 @@ body {
   
   .clan-friends-title {
     font-size: 28px;
+    font-family: Arial, sans-serif;
   }
 }
 
@@ -266,10 +268,11 @@ body {
   body {
     background: #000000;
     background-size: cover;
+    font-family: Arial, sans-serif;
   }
   
   .title a {
-    font-family: "Apple Chancery", "Bradley Hand", "Brush Script MT", cursive;
+    font-family: Arial, sans-serif;
     font-size: 18px;
     padding: 9px 18px;
   }
@@ -291,6 +294,7 @@ body {
   
   .clan-friends-title {
     font-size: 32px;
+    font-family: Arial, sans-serif;
   }
 }
 
@@ -301,10 +305,11 @@ body {
   body {
     background: #000000;
     background-size: cover;
+    font-family: Arial, sans-serif;
   }
   
   .title a {
-    font-family: "Apple Chancery", "Bradley Hand", "Brush Script MT", cursive;
+    font-family: Arial, sans-serif;
     font-size: 19px;
     padding: 10px 19px;
   }
@@ -326,6 +331,7 @@ body {
   
   .clan-friends-title {
     font-size: 34px;
+    font-family: Arial, sans-serif;
   }
 }
 
@@ -336,10 +342,11 @@ body {
   body {
     background: #000000;
     background-size: cover;
+    font-family: Arial, sans-serif;
   }
   
   .title a {
-    font-family: "Apple Chancery", "Bradley Hand", "Brush Script MT", cursive;
+    font-family: Arial, sans-serif;
     font-size: 20px;
     padding: 10px 20px;
   }
@@ -361,6 +368,7 @@ body {
   
   .clan-friends-title {
     font-size: 36px;
+    font-family: Arial, sans-serif;
   }
 }
 
@@ -369,10 +377,11 @@ body {
   body {
     background: #000000;
     background-size: cover;
+    font-family: Arial, sans-serif;
   }
   
   .title a {
-    font-family: "Apple Chancery", "Bradley Hand", "Brush Script MT", cursive;
+    font-family: Arial, sans-serif;
     font-size: 15px;
     padding: 7px 14px;
   }
@@ -394,6 +403,7 @@ body {
   
   .clan-friends-title {
     font-size: 26px;
+    font-family: Arial, sans-serif;
   }
 }
 
@@ -402,10 +412,11 @@ body {
   body {
     background: #000000;
     background-size: cover;
+    font-family: Arial, sans-serif;
   }
   
   .title a {
-    font-family: "Apple Chancery", "Bradley Hand", "Brush Script MT", cursive;
+    font-family: Arial, sans-serif;
     font-size: 18px;
     padding: 9px 18px;
   }
@@ -427,6 +438,7 @@ body {
   
   .clan-friends-title {
     font-size: 32px;
+    font-family: Arial, sans-serif;
   }
 }
 
@@ -435,10 +447,11 @@ body {
   body {
     background: #000000;
     background-size: cover;
+    font-family: Arial, sans-serif;
   }
   
   .title a {
-    font-family: "Apple Chancery", "Bradley Hand", "Brush Script MT", cursive;
+    font-family: Arial, sans-serif;
     font-size: 22px;
     padding: 11px 22px;
   }
@@ -460,5 +473,6 @@ body {
   
   .clan-friends-title {
     font-size: 42px;
+    font-family: Arial, sans-serif;
   }
 }
