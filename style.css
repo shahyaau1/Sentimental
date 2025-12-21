@@ -242,8 +242,9 @@ body {
 @media (max-width: 768px) {
   /* ЧЕРНЫЙ ФОН ДЛЯ ТЕЛЕФОНОВ */
   body {
-    background: #000000; /* черный цвет */
-  }
+  background: #000000;
+  background-size: cover;
+}
   
   /* Заголовок меньше */
   .title a {
@@ -304,3 +305,4 @@ body {
     font-size: 32px;
   }
 }
+
