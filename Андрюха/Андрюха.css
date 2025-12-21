@@ -12,34 +12,34 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-  }
-  
-  /* Заголовок страницы */
-  .page-title {
+}
+
+/* Заголовок страницы */
+.page-title {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 30px;
     font-size: 80px;
     font-family: cursive, sans-serif;
-  }
-  
-  .page-title .hover-text {
+}
+
+.page-title .hover-text {
     font-size: 80px;
     color: white;
-  }
-  
-  /* Основной контент */
-  .content {
+}
+
+/* Основной контент */
+.content {
     display: flex;
     align-items: stretch;
     padding: 40px;
     position: relative;
     z-index: 1;
     min-height: 350px;
-  }
-  
-  /* Стиль для фото слева */
-  .photo {
+}
+
+/* Стиль для фото слева */
+.photo {
     width: 300px;
     height: 300px;
     border-radius: 10px;
@@ -47,26 +47,26 @@ body {
     transition: all 0.4s ease;
     box-shadow: 0 0 15px rgba(183,255,138,0.6);
     flex-shrink: 0;
-  }
-  
-  .photo-left {
+}
+
+.photo-left {
     margin-right: 20px;
-  }
-  
-  .photo-left:hover {
+}
+
+.photo-left:hover {
     transform: scale(1.05) rotate(-1deg);
     box-shadow: 0 0 30px rgba(183,255,138,0.7);
-  }
-  
-  .photo img {
+}
+
+.photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-  }
-  
-  /* Стиль для видео справа */
-  .video-right {
+}
+
+/* Стиль для видео справа */
+.video-right {
     position: absolute;
     right: 40px;
     top: 40px;
@@ -77,40 +77,40 @@ body {
     transition: all 0.4s ease;
     box-shadow: 0 0 15px rgba(183,255,138,0.6);
     z-index: 2;
-  }
-  
-  .video-right:hover {
+}
+
+.video-right:hover {
     transform: scale(1.05) rotate(1deg);
     box-shadow: 0 0 30px rgba(183,255,138,0.7);
-  }
-  
-  /* Видео внутри блока */
-  .video-right video {
+}
+
+/* Видео внутри блока */
+.video-right video {
     width: 100%;
     height: 100%;
     object-fit: contain;
     display: block;
     background-color: black;
-  }
-  
-  /* Стиль текста */
-  .text {
+}
+
+/* Стиль текста */
+.text {
     font-size: 25px;
     line-height: 1;
     max-width: 600px;
-  }
-  
-  /* Цветовые классы */
-  .sentimental-green {
+}
+
+/* Цветовые классы */
+.sentimental-green {
     color: #25F556;
-  }
-  
-  .aka-red {
+}
+
+.aka-red {
     color: red;
-  }
-  
-  /* Стиль текста при наведении */
-  .hover-text {
+}
+
+/* Стиль текста при наведении */
+.hover-text {
     display: inline-block;
     font-size: 24px;
     font-weight: bold;
@@ -134,9 +134,9 @@ body {
       text-shadow 0.4s ease,
       transform 0.4s ease,
       opacity 0.4s ease;
-  }
-  
-  .hover-text:hover {
+}
+
+.hover-text:hover {
     color: rgb(183,255,138);
     text-shadow:
         1px 1px 0 #000,
@@ -152,10 +152,10 @@ body {
         0 0 28px rgba(183,255,138,0.4);
     transform: translateY(-2px);
     opacity: 0.9;
-  }
-  
-  /* Кнопка как на главной */
-  .back-button {
+}
+
+/* Кнопка как на главной */
+.back-button {
     display: inline-block;
     padding: 12px 25px;
     font-family: "ALGERIAN", sans-serif;
@@ -170,9 +170,9 @@ body {
     position: relative;
     overflow: hidden;
     margin-top: 30px;
-  }
-  
-  .back-button::before {
+}
+
+.back-button::before {
     content: "";
     position: absolute;
     top: 0;
@@ -181,27 +181,119 @@ body {
     height: 100%;
     background: linear-gradient(90deg, rgba(255,255,255,0.25), rgba(183,255,138,0.7));
     transition: all 0.4s ease;
-  }
-  
-  .back-button:hover::before {
+}
+
+.back-button:hover::before {
     left: 100%;
-  }
-  
-  .back-button:hover {
+}
+
+.back-button:hover {
     transform: translateY(-4px);
     box-shadow: 0 0 25px rgba(183,255,138,0.6);
-  }
-  
-  .back-button:active {
+}
+
+.back-button:active {
     transform: translateY(1px);
     box-shadow: 0 0 10px rgba(183,255,138,0.4);
-  }
-  
-  /* Центровка кнопки */
-  .button-container {
+}
+
+/* Центровка кнопки */
+.button-container {
     text-align: center;
     margin: 30px 0;
     position: relative;
     z-index: 1;
     padding-bottom: 40px;
-  }
+}
+
+/* ====================== */
+/* АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ */
+/* ====================== */
+@media (max-width: 768px) {
+    body {
+        background: #000000 !important;
+        font-family: Arial, sans-serif !important;
+    }
+    
+    /* ЗАГОЛОВОК ПО ЦЕНТРУ */
+    .page-title {
+        font-size: 40px !important;
+        margin: 10px 0 15px 0 !important;
+        text-align: center !important;
+        width: 100% !important;
+    }
+    
+    .page-title .hover-text {
+        font-size: 40px !important;
+        font-family: Arial, sans-serif !important;
+        text-align: center !important;
+    }
+    
+    .content {
+        display: block !important;
+        padding: 15px !important;
+        min-height: auto !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* ФОТО ПО ЦЕНТРУ */
+    .photo {
+        width: 300px !important;   /* ТВОЙ РАЗМЕР */
+        height: 300px !important;  /* ТВОЙ РАЗМЕР */
+        margin: 0 auto 20px auto !important;
+        display: block !important;
+        transform: none !important;
+    }
+    
+    .photo-left:hover {
+        transform: none !important;
+        box-shadow: 0 0 15px rgba(183,255,138,0.6) !important;
+    }
+    
+    /* ТЕКСТ СЛЕВА */
+    .text {
+        font-size: 16px !important;
+        text-align: left !important;
+        max-width: 100% !important;
+        margin: 0 0 20px 0 !important;
+        padding-left: 10px !important;
+        width: 100% !important;
+    }
+    
+    .hover-text {
+        font-size: 16px !important;
+        margin-bottom: 3px !important;
+        font-family: Arial, sans-serif !important;
+        display: block !important;
+        text-align: left !important;
+    }
+    
+    /* ВИДЕО ПО ЦЕНТРУ */
+    .video-right {
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+        max-height: 250px !important;
+        margin: 10px auto 0 auto !important;
+        display: block !important;
+        transform: none !important;
+    }
+    
+    .video-right:hover {
+        transform: none !important;
+        box-shadow: 0 0 15px rgba(183,255,138,0.6) !important;
+    }
+    
+    .back-button {
+        font-size: 16px !important;
+        padding: 8px 16px !important;
+        font-family: Arial, sans-serif !important;
+        margin-top: 15px !important;
+    }
+    
+    .button-container {
+        margin: 15px 0 !important;
+        padding-bottom: 20px !important;
+    }
+}
