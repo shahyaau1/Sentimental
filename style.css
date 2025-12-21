@@ -242,14 +242,16 @@ body {
 @media (max-width: 768px) {
   /* ЧЕРНЫЙ ФОН ДЛЯ ТЕЛЕФОНОВ */
   body {
-  background: #000000;
-  background-size: cover;
-}
+    background: #000000;
+    background-size: cover;
+    font-family: Arial, sans-serif; /* Добавил Arial */
+  }
   
   /* Заголовок меньше */
   .title a {
     font-size: 20px;
     padding: 10px 20px;
+    font-family: Arial, sans-serif; /* Добавил Arial */
   }
   
   /* Блоки участников - в столбик */
@@ -274,6 +276,7 @@ body {
   /* Clan Friends заголовок меньше */
   .clan-friends-title {
     font-size: 40px;
+    font-family: Arial, sans-serif; /* Добавил Arial */
   }
 }
 
@@ -284,6 +287,7 @@ body {
   /* ЧЕРНЫЙ ФОН ДЛЯ МАЛЕНЬКИХ ТЕЛЕФОНОВ (дублируем для надежности) */
   body {
     background: #000000;
+    font-family: Arial, sans-serif; /* Добавил Arial */
   }
   
   .member {
@@ -299,9 +303,11 @@ body {
   .title a {
     font-size: 18px;
     padding: 8px 16px;
+    font-family: Arial, sans-serif; /* Добавил Arial */
   }
   
   .clan-friends-title {
     font-size: 32px;
+    font-family: Arial, sans-serif; /* Добавил Arial */
   }
 }
