@@ -18,12 +18,12 @@ body {
 .title a {
   display: inline-block;
   padding: 12px 25px;
-  font-family: ALGERIAN, sans-serif;
+  font-family: ALGERIAN;
   font-weight: bold;
   font-size: 24px;
   color: black;
   text-decoration: none;
-  background-color: rgba(183, 255, 138, 0.7);
+  background-color: rgba(183, 255, 138, 0.7); /* прозрачность 70% */
   border-radius: 10px;
   position: relative;
   overflow: hidden;
@@ -59,7 +59,7 @@ body {
   align-items: flex-start;
   overflow-x: auto;
   gap: 20px;
-  padding: 0 20px 50px;
+  padding: 0 20px 30px;
 }
 
 .member {
@@ -88,7 +88,7 @@ body {
   font-weight: bold;
   color: black;
   text-decoration: none;
-  background-color: rgba(183, 255, 138, 0.7);
+  background-color: rgba(183, 255, 138, 0.7); /* прозрачность 70% */
   border-radius: 8px;
   position: relative;
   overflow: hidden;
@@ -126,15 +126,23 @@ body {
   line-height: 0.5;
   margin: 0;
   padding: 0;
-  text-align: center;
 }
 
-.hover-text {
-  display: inline-block;
-  font-size: 40px;
+/* Стиль для hover-текста Clan Friends */
+.clan-friends-section {
+  text-align: center;
+  margin: 20px 0 40px;
+  padding: 20px 0;
+}
+
+.clan-friends-title {
+  font-size: 55px;
   font-weight: bold;
-  color: grey;
+  margin-bottom: 30px;
   cursor: default;
+  color: grey;
+  
+  /* Черная обводка */
   text-shadow: 
     1px 1px 0 #000,
     -1px 1px 0 #000,
@@ -144,6 +152,7 @@ body {
     0px -1px 0 #000,
     1px 0px 0 #000,
     -1px 0px 0 #000;
+  
   transition:
     color 0.4s ease,
     text-shadow 0.4s ease,
@@ -151,11 +160,147 @@ body {
     opacity 0.4s ease;
 }
 
-.hover-text:hover {
+.clan-friends-title:hover {
   color: rgb(183,255,138);
   text-shadow:
-    0 0 12px rgba(183,255,138,0.8),
-    0 0 24px rgba(183,255,138,0.6);
+    1px 1px 0 #000,
+    -1px 1px 0 #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000,
+    0px 1px 0 #000,
+    0px -1px 0 #000,
+    1px 0px 0 #000,
+    -1px 0px 0 #000,
+    0 0 8px rgba(183,255,138,0.7),
+    0 0 18px rgba(183,255,138,0.6),
+    0 0 28px rgba(183,255,138,0.4);
   transform: translateY(-2px);
   opacity: 0.9;
+}
+
+/* Стиль для члена клана друзей */
+.clan-friend {
+  text-align: center;
+}
+
+.clan-friend img {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+.clan-friend img:hover {
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 0 0 25px rgba(183,255,138,0.6);
+}
+
+.clan-friend a {
+  display: inline-block;
+  padding: 10px 15px;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  background-color: rgba(183, 255, 138, 0.7);
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(183,255,138,0.4);
+}
+
+.clan-friend a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255,255,255,0.25), rgba(183,255,138,0.7));
+  transition: all 0.4s ease;
+}
+
+.clan-friend a:hover::before {
+  left: 100%;
+}
+
+.clan-friend a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(183,255,138,0.6);
+}
+
+.clan-friend a:active {
+  transform: translateY(1px);
+  box-shadow: 0 0 10px rgba(183,255,138,0.4);
+}
+
+/* ================= */
+/* ДЛЯ ТЕЛЕФОНОВ */
+/* ================= */
+@media (max-width: 768px) {
+  /* ЧЕРНЫЙ ФОН ДЛЯ ТЕЛЕФОНОВ */
+  body {
+    background: #000000; /* черный цвет */
+  }
+  
+  /* Заголовок меньше */
+  .title a {
+    font-size: 20px;
+    padding: 10px 20px;
+  }
+  
+  /* Блоки участников - в столбик */
+  .team {
+    flex-wrap: wrap; /* Позволяет переносить */
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .member {
+    flex: 0 0 45%; /* 2 колонки */
+    min-width: 150px;
+  }
+  
+  /* Картинки меньше */
+  .member img,
+  .clan-friend img {
+    width: 140px;
+    height: 140px;
+  }
+  
+  /* Clan Friends заголовок меньше */
+  .clan-friends-title {
+    font-size: 40px;
+  }
+}
+
+/* ================= */
+/* ДЛЯ ОЧЕНЬ МАЛЕНЬКИХ ТЕЛЕФОНОВ */
+/* ================= */
+@media (max-width: 480px) {
+  /* ЧЕРНЫЙ ФОН ДЛЯ МАЛЕНЬКИХ ТЕЛЕФОНОВ (дублируем для надежности) */
+  body {
+    background: #000000;
+  }
+  
+  .member {
+    flex: 0 0 100%; /* 1 колонка */
+  }
+  
+  .member img,
+  .clan-friend img {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .title a {
+    font-size: 18px;
+    padding: 8px 16px;
+  }
+  
+  .clan-friends-title {
+    font-size: 32px;
+  }
 }
