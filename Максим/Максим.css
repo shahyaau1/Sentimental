@@ -1,240 +1,248 @@
 /* Основные стили страницы */
 body {
-    background-image: url("../img/background8.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-color: rgba(0,0,0,0.5);
-    background-blend-mode: darken;
-    color: white;
-    font-family: cursive, sans-serif;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-  }
-  
-  /* Заголовок страницы */
-  .page-title {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 30px;
-    font-size: 80px;
-    font-family: cursive, sans-serif;
-  }
-  
-  .page-title .hover-text {
-    font-size: 80px;
-    color: white;
-  }
-  
-  /* Основной контент */
-  .content {
-    display: flex;
-    align-items: stretch;
-    padding: 40px;
-    position: relative;
-    z-index: 1;
-    min-height: 350px;
-  }
-  
-  /* Стиль для фото */
-  .photo {
-    width: 300px;
-    height: 300px;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: all 0.4s ease;
-    box-shadow: 0 0 15px rgba(183,255,138,0.6);
-    flex-shrink: 0;
-  }
-  
-  .photo-left {
-    margin-right: 20px;
-  }
-  
-  .photo-left:hover {
-    transform: scale(1.05) rotate(-1deg);
-    box-shadow: 0 0 30px rgba(183,255,138,0.7);
-  }
-  
-  .photo-right {
-    position: absolute;
-    right: 40px;
-    top: 40px;
-  }
-  
-  .photo-right:hover {
-    transform: scale(1.05) rotate(1deg);
-    box-shadow: 0 0 30px rgba(183,255,138,0.7);
-  }
-  
-  .photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  
-  /* Текст */
-  .text {
-    font-size: 25px;
-    line-height: 1.2;
-    max-width: 600px;
-  }
-  
-  /* Цвет для aka */
-  .aka-red {
-    color: red;
-  }
-  
-  /* Стиль текста при наведении */
-  .hover-text {
-    display: inline-block;
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-    cursor: default;
-    margin-bottom: 5px;
-    
-    /* Черная обводка */
-    text-shadow: 
-        1px 1px 0 #000,
-        -1px 1px 0 #000,
-        1px -1px 0 #000,
-        -1px -1px 0 #000,
-        0px 1px 0 #000,
-        0px -1px 0 #000,
-        1px 0px 0 #000,
-        -1px 0px 0 #000;
-    
-    transition:
-      color 0.4s ease,
-      text-shadow 0.4s ease,
-      transform 0.4s ease,
-      opacity 0.4s ease;
-  }
-  
-  .hover-text:hover {
-    color: rgb(183,255,138);
-    text-shadow:
-        1px 1px 0 #000,
-        -1px 1px 0 #000,
-        1px -1px 0 #000,
-        -1px -1px 0 #000,
-        0px 1px 0 #000,
-        0px -1px 0 #000,
-        1px 0px 0 #000,
-        -1px 0px 0 #000,
-        0 0 8px rgba(183,255,138,0.7),
-        0 0 18px rgba(183,255,138,0.6),
-        0 0 28px rgba(183,255,138,0.4);
-    transform: translateY(-2px);
-    opacity: 0.9;
-  }
-  
-  /* Кнопка */
-  .button-container {
-    text-align: center;
-    margin: 30px 0;
-    position: relative;
-    z-index: 1;
-    padding-bottom: 40px;
-  }
-  
-  .button {
-    display: inline-block;
-    padding: 12px 25px;
-    font-family: "ALGERIAN", sans-serif;
-    font-weight: bold;
-    font-size: 24px;
-    color: black;
-    text-decoration: none;
-    background-color: rgba(183, 255, 138, 0.7);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(183,255,138,0.4);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    margin-top: 15px;
-  }
-  
-  .button::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, rgba(255,255,255,0.25), rgba(183,255,138,0.7));
-    transition: all 0.4s ease;
-  }
-  
-  .button:hover::before {
-    left: 100%;
-  }
-  
-  .button:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 0 25px rgba(183,255,138,0.6);
-  }
-  
-  .button:active {
-    transform: translateY(1px);
-    box-shadow: 0 0 10px rgba(183,255,138,0.4);
-  }
+  background-image: url("../img/background8.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: rgba(0,0,0,0.5);
+  background-blend-mode: darken;
+  color: white;
+  font-family: cursive, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
 
-  .video-left{
-    position: absolute;
-    left: 40px;
-    bottom: 40px;
-    width: 500px;
-    height: 300px;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: all 0.4s ease;
-    box-shadow: 0 0 15px rgba(183,255,138,0.6);
-    z-index: 2;
-  }
+/* Заголовок страницы */
+.page-title {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-size: 80px;
+  font-family: cursive, sans-serif;
+}
 
-  .video-left:hover {
-    transform: scale(1.05) rotate(1deg);
-    box-shadow: 0 0 30px rgba(183,255,138,0.7);
-  }
+.page-title .hover-text {
+  font-size: 80px;
+  color: white;
+}
 
-  .video-left video {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-    background-color: black;
-  }
+/* Основной контент */
+.content {
+  display: flex;
+  align-items: stretch;
+  padding: 40px;
+  position: relative;
+  z-index: 1;
+  min-height: 350px;
+}
 
-  .video-right{
-    position: absolute;
-    right: 40px;
-    bottom: 40px;
-    width: 500px;
-    height: 300px;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: all 0.4s ease;
-    box-shadow: 0 0 15px rgba(183,255,138,0.6);
-    z-index: 2;
-  }
+/* Стиль для фото */
+.photo {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 15px rgba(183,255,138,0.6);
+  flex-shrink: 0;
+}
 
-  .video-right:hover {
-    transform: scale(1.05) rotate(1deg);
-    box-shadow: 0 0 30px rgba(183,255,138,0.7);
-  }
+.photo-left {
+  margin-right: 20px;
+}
 
-  .video-right video {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-    background-color: black;
-  }
+.photo-left:hover {
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 0 0 30px rgba(183,255,138,0.7);
+}
+
+.photo-right {
+  position: absolute;
+  right: 40px;
+  top: 40px;
+}
+
+.photo-right:hover {
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 0 0 30px rgba(183,255,138,0.7);
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Текст */
+.text {
+  font-size: 25px;
+  line-height: 1.2;
+  max-width: 600px;
+}
+
+/* Цвет для aka */
+.aka-red {
+  color: red;
+}
+
+/* Стиль текста при наведении */
+.hover-text {
+  display: inline-block;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  cursor: default;
+  margin-bottom: 5px;
+  
+  /* Черная обводка */
+  text-shadow: 
+      1px 1px 0 #000,
+      -1px 1px 0 #000,
+      1px -1px 0 #000,
+      -1px -1px 0 #000,
+      0px 1px 0 #000,
+      0px -1px 0 #000,
+      1px 0px 0 #000,
+      -1px 0px 0 #000;
+  
+  transition:
+    color 0.4s ease,
+    text-shadow 0.4s ease,
+    transform 0.4s ease,
+    opacity 0.4s ease;
+}
+
+.hover-text:hover {
+  color: rgb(183,255,138);
+  text-shadow:
+      1px 1px 0 #000,
+      -1px 1px 0 #000,
+      1px -1px 0 #000,
+      -1px -1px 0 #000,
+      0px 1px 0 #000,
+      0px -1px 0 #000,
+      1px 0px 0 #000,
+      -1px 0px 0 #000,
+      0 0 8px rgba(183,255,138,0.7),
+      0 0 18px rgba(183,255,138,0.6),
+      0 0 28px rgba(183,255,138,0.4);
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* Кнопка */
+.button-container {
+  text-align: center;
+  margin: 30px 0;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 40px;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 25px;
+  font-family: "ALGERIAN", sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  color: black;
+  text-decoration: none;
+  background-color: rgba(183, 255, 138, 0.7);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(183,255,138,0.4);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  margin-top: 15px;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255,255,255,0.25), rgba(183,255,138,0.7));
+  transition: all 0.4s ease;
+}
+
+.button:hover::before {
+  left: 100%;
+}
+
+.button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 25px rgba(183,255,138,0.6);
+}
+
+.button:active {
+  transform: translateY(1px);
+  box-shadow: 0 0 10px rgba(183,255,138,0.4);
+}
+
+/* Стили для видео контейнера */
+.videos-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 0 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.video-column {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+
+.left-column {
+  align-items: flex-start;
+}
+
+.right-column {
+  align-items: flex-end;
+}
+
+/* Общие стили для видео */
+.video-item {
+  width: 500px;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 15px rgba(183,255,138,0.6);
+  margin-bottom: 20px;
+}
+
+/* Стили для первого видео в колонках */
+.video-left.video-item:first-child,
+.video-right.video-item:first-child {
+  position: static;
+}
+
+/* Стили для второго видео в колонках */
+.second-video {
+  margin-top: 20px;
+}
+
+.video-left.video-item:hover,
+.video-right.video-item:hover {
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 0 0 30px rgba(183,255,138,0.7);
+}
+
+.video-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  background-color: black;
+}
 
 /* ====================== */
 /* АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ */
@@ -308,16 +316,27 @@ body {
     color: red !important;
   }
   
-  .video-left,
-  .video-right {
-    position: static !important;
+  /* Адаптация для видео на мобильных */
+  .videos-wrapper {
+    flex-direction: column !important;
+    padding: 0 15px !important;
+    align-items: center !important;
+  }
+  
+  .video-column {
+    width: 100% !important;
+    align-items: center !important;
+    margin-bottom: 20px !important;
+  }
+  
+  .video-item {
     width: 90% !important;
     height: 200px !important;
     margin: 10px auto !important;
   }
   
-  .video-left:hover,
-  .video-right:hover {
+  .video-left.video-item:hover,
+  .video-right.video-item:hover {
     transform: none !important;
   }
   
