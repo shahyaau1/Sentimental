@@ -7,10 +7,10 @@ body {
     overflow-x: hidden;
     background-color: black;
     min-height: 100vh;
-  }
-  
-  /* Фоновое видео */
-  .bg-video {
+}
+
+/* Фоновое видео */
+.bg-video {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -21,24 +21,24 @@ body {
     transform: translate(-50%, -50%);
     z-index: -1;
     object-fit: cover;
-  }
-  
-  /* Заголовок страницы */
-  .page-title {
+}
+
+/* Заголовок страницы */
+.page-title {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 30px;
-  }
-  
-  .page-title .hover-text {
+}
+
+.page-title .hover-text {
     font-family: cursive, sans-serif;
     font-size: 48px;
     color: white;
     display: inline-block;
-  }
-  
-  /* Фото и текст в одну линию */
-  .content {
+}
+
+/* Фото и текст в одну линию */
+.content {
     display: flex;
     align-items: stretch;
     justify-content: flex-start;
@@ -46,10 +46,10 @@ body {
     position: relative;
     z-index: 1;
     min-height: 320px;
-  }
-  
-  /* Фото Георгия */
-  .photo img {
+}
+
+/* Фото Георгия */
+.photo img {
     width: 300px;
     height: 300px;
     border-radius: 10px;
@@ -57,15 +57,15 @@ body {
     transition: all 0.4s ease;
     margin-right: 20px;
     object-fit: cover;
-  }
-  
-  .photo img:hover {
+}
+
+.photo img:hover {
     transform: scale(1.05) rotate(-1deg);
     box-shadow: 0 0 25px rgba(183,255,138,0.6);
-  }
-  
-  /* Текст рядом с фото */
-  .text {
+}
+
+/* Текст рядом с фото */
+.text {
     font-size: 25px;
     line-height: 0.7;
     margin-left: 20px;
@@ -73,15 +73,15 @@ body {
     flex-direction: column;
     justify-content: center;
     max-height: 300px;
-  }
-  
-  /* Цвет для aka */
-  .aka-red {
+}
+
+/* Цвет для aka */
+.aka-red {
     color: red;
-  }
-  
-  /* Стиль текста при наведении */
-  .hover-text {
+}
+
+/* Стиль текста при наведении */
+.hover-text {
     display: inline-block;
     font-size: 24px;
     font-weight: bold;
@@ -105,9 +105,9 @@ body {
       text-shadow 0.4s ease,
       transform 0.4s ease,
       opacity 0.4s ease;
-  }
-  
-  .hover-text:hover {
+}
+
+.hover-text:hover {
     color: rgb(183,255,138);
     text-shadow:
         1px 1px 0 #000,
@@ -123,18 +123,89 @@ body {
         0 0 28px rgba(183,255,138,0.4);
     transform: translateY(-2px);
     opacity: 0.9;
-  }
-  
-  /* Кнопки */
-  .button-container {
+}
+
+/* Музыкальный виджет — компактный вариант */
+.music-control {
     text-align: center;
-    margin: 30px 0;
+    margin: 30px auto 50px auto;   /* меньше отступов сверху/снизу */
+    padding: 12px 18px;            /* меньше внутреннего пространства */
+    max-width: 320px;              /* уже общий блок */
+    background: rgba(183, 255, 138, 0.4);
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(183,255,138,0.3);
+    position: relative;
+    z-index: 10;
+    backdrop-filter: blur(4px);
+}
+
+.music-btn {
+    padding: 8px 16px;             /* кнопка меньше */
+    font-family: "ALGERIAN", sans-serif;
+    font-weight: bold;
+    font-size: 16px;               /* шрифт поменьше */
+    color: black;
+    background-color: rgba(183, 255, 138, 0.8);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.music-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(183,255,138,0.5);
+    background-color: rgba(183, 255, 138, 1);
+}
+
+.volume-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: white;
+    font-size: 14px;               /* текст поменьше */
+    font-weight: bold;
+    text-shadow: 1px 1px 3px black;
+}
+
+.volume-slider {
+    width: 140px;                  /* ползунок короче */
+    height: 6px;                   /* тоньше */
+    border-radius: 4px;
+    background: rgba(255,255,255,0.3);
+    outline: none;
+    opacity: 0.9;
+    -webkit-appearance: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;                   /* ползунок меньше */
+    height: 16px;
+    border-radius: 50%;
+    background: rgb(183,255,138);
+    cursor: pointer;
+    box-shadow: 0 0 6px rgba(183,255,138,0.7);
+    transition: all 0.2s;
+}
+
+.volume-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+}
+
+/* Кнопки (теперь только Back) */
+.button-container {
+    text-align: center;
+    margin: 40px 0 60px 0;
     position: relative;
     z-index: 1;
     padding-bottom: 40px;
-  }
-  
-  .button {
+}
+
+.button {
     display: inline-block;
     padding: 12px 25px;
     font-family: "ALGERIAN", sans-serif;
@@ -148,10 +219,9 @@ body {
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
-    margin-top: 15px;
-  }
-  
-  .button::before {
+}
+
+.button::before {
     content: "";
     position: absolute;
     top: 0;
@@ -160,28 +230,28 @@ body {
     height: 100%;
     background: linear-gradient(90deg, rgba(255,255,255,0.25), rgba(183,255,138,0.7));
     transition: all 0.4s ease;
-  }
-  
-  .button:hover::before {
+}
+
+.button:hover::before {
     left: 100%;
-  }
-  
-  .button:hover {
+}
+
+.button:hover {
     transform: translateY(-4px);
     box-shadow: 0 0 25px rgba(183,255,138,0.6);
-  }
-  
-  .button:active {
+}
+
+.button:active {
     transform: translateY(1px);
     box-shadow: 0 0 10px rgba(183,255,138,0.4);
-  }
-  
-  .clearfix {
+}
+
+.clearfix {
     clear: both;
-  }
+}
 
 /* ====================== */
-/* АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ - КАК У АНДРЕЯ */
+/* АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ */
 /* ====================== */
 @media (max-width: 768px) {
     /* 1. ЧЕРНЫЙ ФОН */
@@ -224,6 +294,7 @@ body {
         min-height: auto !important;
         width: 100% !important;
         box-sizing: border-box !important;
+        padding-bottom: 20px !important;
     }
     
     /* 5. ФОТО ПО ЦЕНТРУ */
@@ -249,7 +320,7 @@ body {
         box-shadow: 0 0 15px rgba(183,255,138,0.6) !important;
     }
     
-    /* 6. ТЕКСТ СЛЕВА */
+    /* 6. ТЕКСТ */
     .text {
         font-size: 16px !important;
         text-align: left !important;
@@ -273,7 +344,28 @@ body {
         color: red !important;
     }
     
-    /* 7. КНОПКИ */
+    /* Музыкальный виджет на мобильных */
+    .music-control {
+        max-width: 90%;
+        margin: 30px auto 50px auto;
+        padding: 15px;
+    }
+    
+    .music-btn {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+    
+    .volume-container {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .volume-slider {
+        width: 220px;
+    }
+    
+    /* Кнопка Back */
     .button {
         font-size: 16px !important;
         padding: 8px 16px !important;
@@ -286,8 +378,8 @@ body {
     }
     
     .button-container {
-        margin: 15px 0 !important;
-        padding-bottom: 20px !important;
+        margin: 20px 0 !important;
+        padding-bottom: 30px !important;
         text-align: center !important;
         width: 100% !important;
     }
