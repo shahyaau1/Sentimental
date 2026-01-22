@@ -37,14 +37,66 @@
     </div>
   </div>
 
-  <!-- Кнопки -->
+  <!-- Виджет музыки — сразу после .content (под фото и текстом) -->
+  <div class="music-control">
+    <button id="toggleMusic" class="music-btn">Музыка: Вкл</button>
+    <div class="volume-container">
+      <label for="volumeSlider">Громкость:</label>
+      <input type="range" id="volumeSlider" min="0" max="100" value="10" class="volume-slider">
+      <span id="volumeValue">10%</span>
+    </div>
+  </div>
+
+  <!-- Кнопка возврата — внизу страницы -->
   <div class="button-container">
-    <a href="../index.html" class="button"><b>Back to Sentimental</b></a><br>
-    <a href="https://t.me/shalssisf" class="button" target="_blank"><b>Telegram</b></a>
+    <a href="../index.html" class="button"><b>Back to Sentimental</b></a>
   </div>
 
   <div class="clearfix"></div>
+
+  <!-- Аудио -->
+  <audio id="georgyMusic" loop>
+    <source src="../music/Beggin you Madcon.mp3" type="audio/mpeg">
+    Ваш браузер не поддерживает аудио.
+  </audio>
+
+  <script>
+    window.addEventListener('load', function() {
+      const audio = document.getElementById('georgyMusic');
+      const toggleBtn = document.getElementById('toggleMusic');
+      const volumeSlider = document.getElementById('volumeSlider');
+      const volumeValue = document.getElementById('volumeValue');
+
+      audio.volume = 0.10;
+      volumeSlider.value = 10;
+      volumeValue.textContent = '10%';
+
+      if (localStorage.getItem('playGeorgyMusic') === 'true') {
+        audio.play().catch(err => {
+          console.log("Автозапуск не сработал:", err);
+          toggleBtn.textContent = 'Музыка: Выкл';
+        });
+        localStorage.removeItem('playGeorgyMusic');
+      } else {
+        toggleBtn.textContent = 'Музыка: Выкл';
+      }
+
+      toggleBtn.addEventListener('click', function() {
+        if (audio.paused) {
+          audio.play();
+          toggleBtn.textContent = 'Музыка: Вкл';
+        } else {
+          audio.pause();
+          toggleBtn.textContent = 'Музыка: Выкл';
+        }
+      });
+
+      volumeSlider.addEventListener('input', function() {
+        const vol = this.value / 100;
+        audio.volume = vol;
+        volumeValue.textContent = this.value + '%';
+      });
+    });
+  </script>
 </body>
 </html>
-
-
